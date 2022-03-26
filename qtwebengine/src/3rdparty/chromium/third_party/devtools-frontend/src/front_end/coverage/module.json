@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    "data_grid",
+    "source_frame",
+    "ui"
+  ],
+  "modules": [
+    "coverage-legacy.js"
+  ],
+  "resources": [
+    "coverageListView.css",
+    "coverageView.css"
+  ]
+}

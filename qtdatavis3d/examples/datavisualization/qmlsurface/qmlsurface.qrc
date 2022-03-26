@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>qml/qmlsurface/main.qml</file>
+        <file>qml/qmlsurface/Data.qml</file>
+    </qresource>
+    <qresource prefix="/heightmaps">
+        <file alias="image">heightmap.png</file>
+    </qresource>
+</RCC>

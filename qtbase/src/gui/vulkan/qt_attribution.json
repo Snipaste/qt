@@ -1,0 +1,17 @@
+[
+    {
+        "Id": "vulkan-xml-spec",
+        "Name": "Vulkan API Registry",
+        "QDocModule": "qtgui",
+        "Description": "Vulkan XML API Registry.",
+        "QtUsage": "Used to dynamically generate the sources for the QVulkan(Device)Functions classes.",
+        "Path": "vk.xml",
+
+        "Homepage": "https://www.khronos.org/",
+        "Version": "1.2.166",
+        "License": "MIT License",
+        "LicenseId": "Apache-2.0 OR MIT",
+        "LicenseFile": "LICENSE.txt",
+        "Copyright": "Copyright (c) 2015-2020 The Khronos Group Inc."
+    }
+]

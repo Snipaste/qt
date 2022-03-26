@@ -1,0 +1,6 @@
+if(TARGET Qt::StateMachineQml)
+    add_subdirectory(statemachine)
+endif()
+if(TARGET Qt::ScxmlQml)
+    add_subdirectory(scxml)
+endif()

@@ -1,0 +1,17 @@
+Name: OpenXR SDK
+Short Name: OpenXR
+URL: https://github.com/KhronosGroup/OpenXR-SDK
+Version: 1.0.9sd
+Revision: 97cfe495bb7a3853266b646d1c79e169387f9c7a
+License: Apache 2.0
+License File: src/LICENSE
+Security Critical: yes
+
+Description:
+OpenXR is a royalty-free, open standard that provides high-performance access to
+Augmented Reality (AR) and Virtual Reality (VR)—collectively known as
+XR—platforms and devices.
+
+Local Modifications:
+No modifications to upstream files. BUILD.gn contains all of the configurations
+needed to build the OpenXR loader in Chromium.

@@ -1,0 +1,103 @@
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of Qt Quick 3D.
+**
+** $QT_BEGIN_LICENSE:GPL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 or (at your option) any later version
+** approved by the KDE Free Qt Foundation. The licenses are as published by
+** the Free Software Foundation and appearing in the file LICENSE.GPL3
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+// Assimp's animMesh stores complete target attributes,
+// so it's littlebit different from the glTF's morphing operation
+vec3 qt_getMorphPosition(vec3 pos)
+{
+    vec3 morphPosition = pos;
+#if defined(QT_MORPH_IN_POSITION0) && (QT_MORPH_MAX_COUNT > 0)
+    morphPosition += qt_morphWeights[0] * (attr_tpos0 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION1) && (QT_MORPH_MAX_COUNT > 1)
+    morphPosition += qt_morphWeights[1] * (attr_tpos1 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION2) && (QT_MORPH_MAX_COUNT > 2)
+    morphPosition += qt_morphWeights[2] * (attr_tpos2 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION3) && (QT_MORPH_MAX_COUNT > 3)
+    morphPosition += qt_morphWeights[3] * (attr_tpos3 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION4) && (QT_MORPH_MAX_COUNT > 4)
+    morphPosition += qt_morphWeights[4] * (attr_tpos4 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION5) && (QT_MORPH_MAX_COUNT > 5)
+    morphPosition += qt_morphWeights[5] * (attr_tpos5 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION6) && (QT_MORPH_MAX_COUNT > 6)
+    morphPosition += qt_morphWeights[6] * (attr_tpos6 - pos);
+#endif
+#if defined(QT_MORPH_IN_POSITION7) && (QT_MORPH_MAX_COUNT > 7)
+    morphPosition += qt_morphWeights[7] * (attr_tpos7 - pos);
+#endif
+    return morphPosition;
+}
+
+vec3 qt_getMorphNormal(vec3 norm)
+{
+    vec3 morphNormal = norm;
+#if defined(QT_MORPH_IN_NORMAL0) && (QT_MORPH_MAX_COUNT > 0)
+    morphNormal += qt_morphWeights[0] * (attr_tnorm0 - norm);
+#endif
+#if defined(QT_MORPH_IN_NORMAL1) && (QT_MORPH_MAX_COUNT > 1)
+    morphNormal += qt_morphWeights[1] * (attr_tnorm1 - norm);
+#endif
+#if defined(QT_MORPH_IN_NORMAL2) && (QT_MORPH_MAX_COUNT > 2)
+    morphNormal += qt_morphWeights[2] * (attr_tnorm2 - norm);
+#endif
+#if defined(QT_MORPH_IN_NORMAL3) && (QT_MORPH_MAX_COUNT > 3)
+    morphNormal += qt_morphWeights[3] * (attr_tnorm3 - norm);
+#endif
+    return morphNormal;
+}
+
+vec3 qt_getMorphTangent(vec3 tan)
+{
+    vec3 morphTangent = tan;
+#if defined(QT_MORPH_IN_TANGENT0) && (QT_MORPH_MAX_COUNT > 0)
+    morphTangent += qt_morphWeights[0] * (attr_ttan0 - tan);
+#endif
+#if defined(QT_MORPH_IN_TANGENT1) && (QT_MORPH_MAX_COUNT > 1)
+    morphTangent += qt_morphWeights[1] * (attr_ttan1 - tan);
+#endif
+    return morphTangent;
+}
+
+vec3 qt_getMorphBinormal(vec3 binorm)
+{
+    vec3 morphBinormal = binorm;
+#if defined(QT_MORPH_IN_BINORMAL0) && (QT_MORPH_MAX_COUNT > 0)
+    morphBinormal += qt_morphWeights[0] * (attr_tbinorm0 - binorm);
+#endif
+#if defined(QT_MORPH_IN_BINORMAL1) && (QT_MORPH_MAX_COUNT > 1)
+    morphBinormal += qt_morphWeights[1] * (attr_tbinorm1 - binorm);
+#endif
+    return morphBinormal;
+}
+

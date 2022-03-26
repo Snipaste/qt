@@ -1,0 +1,153 @@
+/****************************************************************************
+**
+** Copyright (C) 2022 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+
+//! [all]
+\section1 Desktop Platforms
+//! [desktop]
+
+\section2 \l{Qt for Linux/X11}{Linux/X11}
+//! [linux]
+\table 80%
+    \header \li Distribution \li Architecture \li Compiler \li Notes
+    \row \li Red Hat 8.4
+        \li \c x86_64
+        \li GCC 10 (toolset)
+        \li
+    \row \li openSUSE 15.3
+        \li \c x86_64
+        \li GCC 9
+        \li
+    \row \li SUSE Linux Enterprise Server 15 SP3
+        \li \c x86_64
+        \li GCC 10
+        \li
+    \row \li Ubuntu 20.04
+        \li \c x86_64
+        \li GCC as provided by Canonical, GCC 9.x
+        \li
+    \row \li Generic Linux
+        \li \c x86 and \c x86_64
+        \li GCC 9
+        \li
+\endtable
+//! [linux]
+
+\section2 \l{Qt for macOS}{\macos}
+//! [macos]
+\table 80%
+    \header \li Target Platform \li Architecture \li Build Environment
+    \row \li \macos 10.14, 10.15, 11, 12
+        \li \c x86_64, \c x86_64h, and \c arm64
+        \li Xcode 12 (11 SDK), \li Xcode 13 (12 SDK)
+\endtable
+//! [macos]
+
+\section2 \l{Qt for Windows}{Windows}
+//! [windows]
+\table 80%
+    \header \li Operating System \li Architecture \li Compiler
+    \row \li Windows 10 (1809 or later)
+        \li \c x86_64
+        \li MSVC 2019, MSVC 2022, MinGW 11.2
+        \li
+    \row \li Windows 11 21H2
+        \li \c x86_64
+        \li MSVC 2019, MSVC 2022, MinGW 11.2
+    \row \li Windows on ARM
+        \li \c arm64
+        \li MSVC 2019
+        \li Technology Preview
+\endtable
+
+//! [windows]
+
+//! [desktop]
+
+\section1 Mobile Platforms
+//! [mobile]
+
+\section2 \l{Qt for Android}{Android}
+//! [android]
+\table 80%
+    \header \li Distribution \li Architecture \li Compiler \li Notes
+    \row \li Android 6.0 or later (API level 23 or higher)
+        \li \c armv7a, \c x86, \c arm64-v8, and \c x86_64
+        \li Clang 11.0.5 (NDK r22b) as provided by Google, MinGW 11.2
+        \li
+\endtable
+//! [android]
+
+\section2 \l{Qt for iOS}{iOS}
+//! [ios]
+\table 80%
+    \header \li Target Platform \li Architecture \li Build Environment \li Notes
+    \row \li iOS 13, iOS 14, iOS 15
+        \li \c armv8 (\c arm64)
+        \li Xcode 12 (iOS 14 SDK), \b {Xcode 13} (iOS 15 SDK)
+        \li
+\endtable
+//! [ios]
+
+//! [mobile]
+
+\section1 Embedded Platforms
+//! [embedded]
+
+\section2 Android Automotive OS
+
+The \l{Qt for Android Automotive} solution is based on \l{Qt for Android},
+supporting Android 10 and 11, with the Android Automotive car API bindings.
+
+\section2 \l{Qt for Embedded Linux}{Embedded Linux}
+
+Refer to \l{Configure an Embedded Linux Device} for information on generic
+cross-compilation of Qt for Embedded Linux devices.
+
+For further embedded platform support, please consult the
+\l{http://doc.qt.io/QtForDeviceCreation}{Qt for Device Creation} documentation.
+
+\section2 Real Time Operating Systems
+
+\table 80%
+    \header \li Operating System \li Architecture \li Compiler \li Provided in
+    \row \li INTEGRITY 19.0.13
+    \li \c arm64
+    \li GHS compiler version 2020.1.4 or newer
+    \li \l{Qt for INTEGRITY}
+    \row \li QNX 7.1
+    \li
+    \li
+    \li \l{Qt for QNX}
+\endtable
+
+//! [embedded]
+
+//! [all]
+
+*/

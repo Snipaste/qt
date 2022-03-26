@@ -1,0 +1,6 @@
+SYNCQT.HEADER_FILES = api/qquickwebengineprofile.h api/qtwebenginequickglobal.h 
+SYNCQT.GENERATED_HEADER_FILES = QQuickWebEngineProfile qtwebenginequickversion.h QtWebEngineQuickVersion QtWebEngineQuick 
+SYNCQT.PRIVATE_HEADER_FILES = api/qquickwebengineaction_p.h api/qquickwebengineaction_p_p.h api/qquickwebengineclientcertificateselection_p.h api/qquickwebenginedialogrequests_p.h api/qquickwebenginedownloadrequest_p.h api/qquickwebenginefaviconprovider_p_p.h api/qquickwebengineforeigntypes_p.h api/qquickwebenginenewwindowrequest_p.h api/qquickwebengineprofile_p.h api/qquickwebenginescriptcollection_p.h api/qquickwebenginescriptcollection_p_p.h api/qquickwebenginesettings_p.h api/qquickwebenginesingleton_p.h api/qquickwebenginetouchhandleprovider_p_p.h api/qquickwebengineview_p.h api/qquickwebengineview_p_p.h api/qtwebenginequickglobal_p.h 
+SYNCQT.QPA_HEADER_FILES = 
+SYNCQT.CLEAN_HEADER_FILES = api/qquickwebengineprofile.h api/qtwebenginequickglobal.h 
+SYNCQT.INJECTIONS = 

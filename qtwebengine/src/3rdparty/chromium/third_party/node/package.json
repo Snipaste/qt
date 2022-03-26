@@ -1,0 +1,15 @@
+{
+  "name": "webui-node-modules",
+  "version": "1.0.0",
+  "author": "dpapad@chromium.org",
+  "dependencies": {
+    "babel-eslint": "10.0.2",
+    "crisper": "2.1.1",
+    "eslint": "7.11.0",
+    "polymer-bundler": "4.0.10",
+    "polymer-css-build": "0.7.0",
+    "terser": "5.3.3",
+    "svgo": "1.2.0",
+    "typescript": "3.5.3"
+  }
+}

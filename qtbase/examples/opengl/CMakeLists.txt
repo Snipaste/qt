@@ -1,0 +1,17 @@
+# Generated from opengl.pro.
+
+qt_internal_add_example(hellowindow)
+qt_internal_add_example(paintedwindow)
+qt_internal_add_example(openglwindow)
+qt_internal_add_example(qopenglwindow)
+if(TARGET Qt::Widgets)
+    qt_internal_add_example(contextinfo)
+    qt_internal_add_example(threadedqopenglwidget)
+    qt_internal_add_example(2dpainting)
+    qt_internal_add_example(hellogl2)
+    qt_internal_add_example(qopenglwidget)
+    qt_internal_add_example(cube)
+    qt_internal_add_example(textures)
+    qt_internal_add_example(hellogles3)
+    qt_internal_add_example(computegles31)
+endif()

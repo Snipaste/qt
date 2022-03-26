@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "ui"
+  ],
+  "resources": [
+    "dataGrid.css"
+  ],
+  "modules": []
+}

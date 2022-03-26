@@ -1,0 +1,5 @@
+#ifndef QT_QTQMLCOMPILER_MODULE_H
+#define QT_QTQMLCOMPILER_MODULE_H
+#include <QtQmlCompiler/QtQmlCompilerDepends>
+#include "qtqmlcompilerversion.h"
+#endif

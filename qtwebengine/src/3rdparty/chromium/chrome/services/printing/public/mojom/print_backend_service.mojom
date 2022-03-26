@@ -1,0 +1,40 @@
+// Copyright 2020 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module printing.mojom;
+
+import "printing/backend/mojom/print_backend.mojom";
+
+// The main interface to Chrome's Print Backend Service, which performs
+// printer queries and commands to operating system printer drivers in an
+// isolated process.
+interface PrintBackendService {
+  // Establish the locale to be used for calls with this service and the
+  // interface to the underlying data source.
+  Init(string locale);
+
+  // Enumerates the list of installed local and network printers.
+  // No value provided for `printer_list` if there is a failure.
+  EnumeratePrinters()
+    => (array<PrinterBasicInfo>? printer_list);
+
+  // Gets the default printer name from the data source.
+  // No value for `printer_name` is provided if there is a failure.
+  GetDefaultPrinterName()
+    => (string? printer_name);
+
+  // Gets the semantic capabilities and defaults for a specific printer.
+  // No value provided for `printer_caps` if there is a failure.
+  GetPrinterSemanticCapsAndDefaults(string printer_name)
+    => (PrinterSemanticCapsAndDefaults? printer_caps);
+
+  // Gets the basic info, paper sizes, and semantic capabilities and defaults
+  // for a specific printer.
+  // No value for `printer_info`, `user_defined_papers`, and `printer_caps` if
+  // there is a failure.
+  FetchCapabilities(string printer_name)
+    => (PrinterBasicInfo? printer_info,
+        array<Paper>? user_defined_papers,
+        PrinterSemanticCapsAndDefaults? printer_caps);
+};

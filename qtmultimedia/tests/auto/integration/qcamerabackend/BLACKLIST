@@ -1,0 +1,11 @@
+
+[testCameraCaptureMetadata]
+osx
+ios
+
+[testCameraStartParallel]
+ios
+
+[testCameraFormat]
+osx
+ios

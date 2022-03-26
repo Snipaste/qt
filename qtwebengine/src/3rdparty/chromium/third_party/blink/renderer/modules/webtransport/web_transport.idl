@@ -1,0 +1,31 @@
+// Copyright 2020 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// https://wicg.github.io/web-transport/#web-transport
+[
+    ActiveScriptWrappable,
+    Exposed=(Window,Worker),
+    RuntimeEnabled=QuicTransport
+] interface WebTransport {
+  [CallWith=ScriptState, RaisesException, MeasureAs=WebTransport] constructor(USVString url, optional QuicTransportOptions options = {});
+  [CallWith=ScriptState, RaisesException] Promise<SendStream>
+      createUnidirectionalStream();
+  readonly attribute ReadableStream incomingUnidirectionalStreams;
+
+  [CallWith=ScriptState, RaisesException] Promise<BidirectionalStream>
+      createBidirectionalStream();
+  readonly attribute ReadableStream incomingBidirectionalStreams;
+
+  readonly attribute WritableStream datagramWritable;
+  readonly attribute ReadableStream datagramReadable;
+
+  void close(optional WebTransportCloseInfo closeInfo = {});
+  readonly attribute Promise<void> ready;
+  readonly attribute Promise<WebTransportCloseInfo> closed;
+
+  // This is an experimental and non-standard function. Sets the duration
+  // which determines whether an outgoing datagram should be discarded due to
+  // being in the queue for too long, in milliseconds.
+  void setDatagramWritableQueueExpirationDuration(double ms);
+};

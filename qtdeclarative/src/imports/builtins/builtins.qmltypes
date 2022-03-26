@@ -1,0 +1,166 @@
+import QtQuick.tooling 1.2
+
+Module {
+    dependencies: []
+
+    Component {
+        name: "void"
+        extension: "undefined"
+        exports: ["QML/void 1.0"]
+        accessSemantics: "none"
+    }
+
+    Component {
+        name: "QVariant"
+        accessSemantics: "value"
+        exports: ["QML/var 1.0", "QML/variant 1.0"]
+        exportMetaObjectRevisions: [256, 256]
+    }
+
+    Component {
+        name: "QJSValue"
+        accessSemantics: "value"
+    }
+
+    Component {
+        // QQmlV4Function is the name for varargs. If such parameter is declared
+        // we can invoke the method with any number of QJSValue parameters.
+        // Access semantics are not "value" because the actual QQmlV4Function object
+        // is passed as a pointer.
+        name: "QQmlV4Function"
+    }
+
+    Component {
+        name: "QObject"
+        accessSemantics: "reference"
+        exports: ["QML/QtObject 1.0"]
+        exportMetaObjectRevisions: [256]
+
+        Method {
+            name: "toString"
+            type: "QString"
+        }
+
+        Method {
+            name: "destroy"
+        }
+
+        Method {
+            name: "destroy"
+
+            Parameter {
+                name: "delay"
+                type: "int"
+            }
+        }
+    }
+
+    Component {
+        name: "QQmlComponent"
+        accessSemantics: "reference"
+        prototype: "QObject"
+        exports: ["QML/Component 1.0"]
+        exportMetaObjectRevisions: [256]
+
+        Enum {
+            name: "Status"
+            values: ["Null", "Ready", "Loading", "Error"]
+        }
+
+        Property {
+            name: "status"
+            type: "Status"
+            isReadonly: true
+        }
+
+        Signal {
+            name: "statusChanged"
+
+            Parameter {
+                type: "QQmlComponent::Status"
+            }
+
+        }
+
+        Method {
+            name: "errorString"
+            type: "QString"
+        }
+    }
+
+    Component {
+        name: "int"
+        extension: "Number"
+        exports: ["QML/int 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "float"
+        extension: "Number"
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "double"
+        extension: "Number"
+        exports: ["QML/real 1.0", "QML/double 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "QString"
+        extension: "String"
+        exports: ["QML/string 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "bool"
+        extension: "Boolean"
+        exports: ["QML/bool 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "QDateTime"
+        extension: "Date"
+        exports: ["QML/date 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "QUrl"
+        extension: "Url"
+        exports: ["QML/url 1.0"]
+        exportMetaObjectRevisions: [256]
+        accessSemantics: "value"
+    }
+
+    Component {
+        name: "QVariantList"
+        valueType: "QVariant"
+        accessSemantics: "sequence"
+    }
+
+    Component {
+       name: "QVariantMap"
+       accessSemantics: "value"
+    }
+
+    Component {
+      name: "QRegularExpression"
+      extension: "RegExp"
+      accessSemantics: "value"
+    }
+
+    Component {
+      name: "QByteArray"
+      accessSemantics: "value"
+    }
+}

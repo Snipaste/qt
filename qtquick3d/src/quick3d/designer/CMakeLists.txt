@@ -1,0 +1,70 @@
+qt_path_join(destination ${QT_INSTALL_DIR} "${INSTALL_QMLDIR}/QtQuick3D/designer")
+qt_copy_or_install(
+    FILES
+        AbstractLightSection.qml
+        BufferInputSection.qml
+        BufferInputSpecifics.qml
+        BufferSection.qml
+        BufferSpecifics.qml
+        CustomMaterialSection.qml
+        CustomMaterialSpecifics.qml
+        DefaultMaterialSection.qml
+        DefaultMaterialSpecifics.qml
+        DirectionalLightSection.qml
+        DirectionalLightSpecifics.qml
+        EffectSection.qml
+        EffectSpecifics.qml
+        FileInstancingSection.qml
+        FileInstancingSpecifics.qml
+        FrustumCameraSection.qml
+        FrustumCameraSpecifics.qml
+        IdComboBox.qml
+        InstanceListEntrySection.qml
+        InstanceListEntrySpecifics.qml
+        InstanceListSection.qml
+        InstanceListSpecifics.qml
+        JointSection.qml
+        JointSpecifics.qml
+        Loader3DSection.qml
+        Loader3DSpecifics.qml
+        MaterialSection.qml
+        ModelSection.qml
+        ModelSpecifics.qml
+        MorphTargetSection.qml
+        MorphTargetSpecifics.qml
+        NodeSection.qml
+        NodeSpecifics.qml
+        Object3DSection.qml
+        OrthographicCameraSection.qml
+        OrthographicCameraSpecifics.qml
+        PassSection.qml
+        PassSpecifics.qml
+        PerspectiveCameraSection.qml
+        PerspectiveCameraSpecifics.qml
+        PointLightSection.qml
+        PointLightSpecifics.qml
+        PrincipledMaterialSection.qml
+        PrincipledMaterialSpecifics.qml
+        Repeater3DSection.qml
+        Repeater3DSpecifics.qml
+        SceneEnvironmentSection.qml
+        SceneEnvironmentSpecifics.qml
+        SetUniformValueSection.qml
+        SetUniformValueSpecifics.qml
+        ShaderSection.qml
+        ShaderSpecifics.qml
+        ShadowSection.qml
+        SpotLightSection.qml
+        SpotLightSpecifics.qml
+        TextureInputSection.qml
+        TextureInputSpecifics.qml
+        TextureSection.qml
+        TextureSpecifics.qml
+        View3DSection.qml
+        View3DSpecifics.qml
+        quick3d.metainfo
+    DESTINATION "${destination}"
+)
+
+add_subdirectory(source)
+add_subdirectory(images)

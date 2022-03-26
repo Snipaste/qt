@@ -1,0 +1,18 @@
+{
+  "dependencies": [
+    "components",
+    "data_grid",
+    "object_ui",
+    "browser_sdk"
+  ],
+  "modules": [
+    "console-legacy.js"
+  ],
+  "resources": [
+    "consoleContextSelector.css",
+    "consolePinPane.css",
+    "consolePrompt.css",
+    "consoleSidebar.css",
+    "consoleView.css"
+  ]
+}

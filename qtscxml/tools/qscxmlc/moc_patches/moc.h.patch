@@ -1,0 +1,105 @@
+--- .upstream/moc.h	2021-03-18 12:30:56.000000000 +0200
++++ moc.h	2021-03-19 15:59:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ ** Copyright (C) 2016 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+-** This file is part of the tools applications of the Qt Toolkit.
++** This file is part of the QtScxml module of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+ ** Commercial License Usage
+@@ -29,15 +29,13 @@
+ #ifndef MOC_H
+ #define MOC_H
+ 
+-#include "parser.h"
+-#include <qstringlist.h>
+-#include <qmap.h>
+-#include <qpair.h>
+-#include <qjsondocument.h>
+-#include <qjsonarray.h>
+-#include <qjsonobject.h>
+-#include <qversionnumber.h>
+-#include <stdio.h>
++// -- QtScxml
++#include <QtCore/qmap.h>
++#include <QtCore/qpair.h>
++#include <QtCore/qjsondocument.h>
++#include <QtCore/qjsonarray.h>
++// -- QtScxml
++
+ #include <ctype.h>
+ 
+ QT_BEGIN_NAMESPACE
+@@ -48,16 +46,18 @@
+ {
+     enum ReferenceType { NoReference, Reference, RValueReference, Pointer };
+ 
+-    inline Type() : isVolatile(false), isScoped(false), firstToken(NOTOKEN), referenceType(NoReference) {}
++    inline Type() : isVolatile(false), isScoped(false), /* firstToken(NOTOKEN) -- QtScxml ,*/ referenceType(NoReference) {}
+     inline explicit Type(const QByteArray &_name)
+-        : name(_name), rawName(name), isVolatile(false), isScoped(false), firstToken(NOTOKEN), referenceType(NoReference) {}
++        : name(_name), rawName(name), isVolatile(false), isScoped(false), /* firstToken(NOTOKEN) -- QtScxml ,*/ referenceType(NoReference) {}
+     QByteArray name;
+     //When used as a return type, the type name may be modified to remove the references.
+     // rawName is the type as found in the function signature
+     QByteArray rawName;
+     uint isVolatile : 1;
+     uint isScoped : 1;
++#if 0 // -- QtScxml
+     Token firstToken;
++#endif // -- QtScxml
+     ReferenceType referenceType;
+ };
+ Q_DECLARE_TYPEINFO(Type, Q_RELOCATABLE_TYPE);
+@@ -105,8 +105,9 @@
+     bool inlineCode = false;
+     bool wasCloned = false;
+ 
++#if 0 // -- QtScxml
+     bool returnTypeIsVolatile = false;
+-
++#endif // -- QtScxml
+     bool isCompat = false;
+     bool isInvokable = false;
+     bool isScriptable = false;
+@@ -120,6 +121,11 @@
+ 
+     QJsonObject toJson() const;
+     static void accessToJson(QJsonObject *obj, Access acs);
++
++// -- QtScxml
++    QByteArray mangledName;
++    const char *implementation = nullptr;
++// -- QtScxml
+ };
+ Q_DECLARE_TYPEINFO(FunctionDef, Q_RELOCATABLE_TYPE);
+ 
+@@ -144,6 +150,10 @@
+     int location = -1; // token index, used for error reporting
+ 
+     QJsonObject toJson() const;
++
++// -- QtScxml
++    QByteArray mangledName;
++// -- QtScxml
+ };
+ Q_DECLARE_TYPEINFO(PropertyDef, Q_RELOCATABLE_TYPE);
+ 
+@@ -217,6 +227,7 @@
+ };
+ Q_DECLARE_TYPEINFO(NamespaceDef, Q_RELOCATABLE_TYPE);
+ 
++#if 0 // -- QtScxml
+ class Moc : public Parser
+ {
+ public:
+@@ -295,6 +306,7 @@
+     void checkSuperClasses(ClassDef *def);
+     void checkProperties(ClassDef* cdef);
+ };
++#endif // -- QtScxml
+ 
+ inline QByteArray noRef(const QByteArray &type)
+ {

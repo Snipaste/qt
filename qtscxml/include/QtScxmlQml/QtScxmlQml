@@ -1,0 +1,5 @@
+#ifndef QT_QTSCXMLQML_MODULE_H
+#define QT_QTSCXMLQML_MODULE_H
+#include <QtScxmlQml/QtScxmlQmlDepends>
+#include "qtscxmlqmlversion.h"
+#endif

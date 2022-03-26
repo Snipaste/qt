@@ -1,0 +1,67 @@
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example customeffect
+    \ingroup quick3d-examples
+    \title Qt Quick 3D - Custom Effect Example
+    \brief Demonstrates writing custom post-processing effects.
+    \image customeffect-example.jpg
+
+    The example implements its own custom post-processing effects, which are then applied on
+    the scene via \l SceneEnvironment::effects. It demonstrates both the simplest type of
+    effects that only have a fragment shader, and also the more advanced case with both a
+    vertex and fragment shader present, with data passed between the two.
+
+    The simple effect is using only a single fragment shader, and adding a texture input from
+    an image file:
+
+    \snippet customeffect/main.qml eff1
+
+    This effect uses a very simple fragment shader, just taking the input texture containing
+    the scene, and multiplying it with the image texture:
+
+    \quotefile customeffect/effect.frag
+
+    The shader snippets in the \c{.vert} and \c{.frag} files are written using the
+    built-in keywords as described in the \l Effect documentation. Custom properties with
+    basic types, as well as properties with the \l TextureInput type are automatically
+    exposed to the shaders as uniforms and samplers.
+
+
+    The second effect is more complex. It specifies both a vertex and a fragment shader, as
+    well as two properties: \c uRed and \c uGreen, with an animation on \c uRed:
+
+    \snippet customeffect/main.qml eff2
+
+    The fragment shader for this effect creates a distortion by modifying the sampling
+    coordinates. The calculation uses \c center_vec, which comes from the fragment shader.
+    Finally, the shader adjusts the color using the \c uRed and \c uGreen uniforms. Note
+    that these uniforms do not have to be declared in the shader:
+
+    \quotefile customeffect/effect2.frag
+*/

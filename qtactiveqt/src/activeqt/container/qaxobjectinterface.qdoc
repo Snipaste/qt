@@ -1,0 +1,112 @@
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
+**
+** This file is part of the ActiveQt framework of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** BSD License Usage
+** Alternatively, you may use this file under the terms of the BSD license
+** as follows:
+**
+** "Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of The Qt Company Ltd nor the names of its
+**     contributors may be used to endorse or promote products derived
+**     from this software without specific prior written permission.
+**
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \class QAxObjectInterface
+    \brief QAxObjectInterface is an interface providing common properties of QAxObject and QAxWidget.
+    \inmodule QAxContainer
+    \since 6.0
+*/
+
+/*!
+    \fn QAxObjectInterface::~QAxObjectInterface()
+
+    Destroys the QAxObjectInterface.
+*/
+
+/*!
+    \fn virtual ulong QAxObjectInterface::classContext() const
+
+    \return the context the ActiveX control will run in (default CLSCTX_SERVER).
+
+    \sa QAxBaseWidget::classContext, QAxBaseObject::classContext
+*/
+
+/*!
+    \fn virtual void QAxObjectInterface::setClassContext(ulong classContext)
+
+    Sets the context the ActiveX control will run in to \a classContext
+
+    Affects the "dwClsContext" argument when calling CoCreateInstance.
+    This can be used to control in-proc vs. out-of-proc startup for controls
+    supporting both alternatives. Also, it can be used to modify/reduce control
+    permissions when used with CLSCTX_ENABLE_CLOAKING and an impersonation token.
+
+    Note that this function must be called before setControl() to have any
+    effect.
+
+    \sa QAxBaseWidget::classContext, QAxBaseObject::classContext
+*/
+
+/*!
+    \fn virtual QString QAxObjectInterface::control() const
+
+    \return the name of the COM object wrapped by this QAxBase object.
+
+    \sa QAxBaseWidget::control, QAxBaseObject::control
+*/
+
+/*!
+    \fn virtual bool QAxObjectInterface::setControl(const QString &c)
+
+    \return whether setting the COM object succeeded.
+
+     Sets the name of the COM object wrapped by this QAxBase object to \a c.
+
+    \sa QAxBaseWidget::control, QAxBaseObject::control
+*/
+
+/*!
+    \fn virtual void QAxObjectInterface::resetControl()
+
+    Disconnects and destroys the COM object.
+
+    \sa QAxBaseWidget::control, QAxBaseObject::control
+*/

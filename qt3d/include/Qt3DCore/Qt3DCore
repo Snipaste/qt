@@ -1,0 +1,27 @@
+#ifndef QT_QT3DCORE_MODULE_H
+#define QT_QT3DCORE_MODULE_H
+#include <Qt3DCore/Qt3DCoreDepends>
+#include "qabstractaspect.h"
+#include "qabstractfunctor.h"
+#include "qabstractskeleton.h"
+#include "qarmature.h"
+#include "qaspectengine.h"
+#include "qaspectjob.h"
+#include "qattribute.h"
+#include "qbackendnode.h"
+#include "qboundingvolume.h"
+#include "qbuffer.h"
+#include "qcomponent.h"
+#include "qcoreaspect.h"
+#include "qcoresettings.h"
+#include "qentity.h"
+#include "qgeometry.h"
+#include "qgeometryview.h"
+#include "qjoint.h"
+#include "qnode.h"
+#include "qnodeid.h"
+#include "qskeleton.h"
+#include "qskeletonloader.h"
+#include "qtransform.h"
+#include "qt3dcoreversion.h"
+#endif

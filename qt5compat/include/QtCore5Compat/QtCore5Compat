@@ -1,0 +1,14 @@
+#ifndef QT_QTCORE5COMPAT_MODULE_H
+#define QT_QTCORE5COMPAT_MODULE_H
+#include <QtCore5Compat/QtCore5CompatDepends>
+#include "qcore5global.h"
+#include "qbinaryjson.h"
+#include "qlinkedlist.h"
+#include "qregexp.h"
+#include "qstringref.h"
+#if QT_CONFIG(textcodec)
+#include "qtextcodec.h"
+#endif
+#include "qxml.h"
+#include "qtcore5compatversion.h"
+#endif

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/accessibility">
+        <file>accessibility.qml</file>
+        <file>Button.qml</file>
+        <file>Checkbox.qml</file>
+        <file>Slider.qml</file>
+    </qresource>
+</RCC>

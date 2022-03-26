@@ -1,0 +1,6 @@
+SYNCQT.HEADER_FILES = qquickstyle.h qtquickcontrols2global.h 
+SYNCQT.GENERATED_HEADER_FILES = QQuickStyle qtquickcontrols2version.h QtQuickControls2Version QtQuickControls2 
+SYNCQT.PRIVATE_HEADER_FILES = qquickstyle_p.h qquickstyleplugin_p.h basic/qquickbasicstyle_p.h basic/qquickbasictheme_p.h fusion/qquickfusionstyle_p.h fusion/qquickfusiontheme_p.h imagine/qquickimaginestyle_p.h imagine/qquickimaginetheme_p.h material/qquickmaterialstyle_p.h material/qquickmaterialtheme_p.h universal/qquickuniversalstyle_p.h universal/qquickuniversaltheme_p.h basic/impl/qquickbasicbusyindicator_p.h basic/impl/qquickbasicdial_p.h basic/impl/qquickbasicprogressbar_p.h fusion/impl/qquickfusionbusyindicator_p.h fusion/impl/qquickfusiondial_p.h fusion/impl/qquickfusionknob_p.h imagine/impl/qquickimageselector_p.h imagine/impl/qquickninepatchimage_p.h material/impl/qquickmaterialbusyindicator_p.h material/impl/qquickmaterialprogressbar_p.h material/impl/qquickmaterialripple_p.h universal/impl/qquickuniversalbusyindicator_p.h universal/impl/qquickuniversalfocusrectangle_p.h universal/impl/qquickuniversalprogressbar_p.h 
+SYNCQT.QPA_HEADER_FILES = 
+SYNCQT.CLEAN_HEADER_FILES = qquickstyle.h qtquickcontrols2global.h 
+SYNCQT.INJECTIONS = 

@@ -1,0 +1,48 @@
+/****************************************************************************
+**
+** Copyright (C) 2021 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example multimedia/video/mediaplayer
+    \title QML Media Player Example
+    \ingroup multimedia_examples
+    \ingroup video_examples_qml
+    \brief Playing audio and video using Qt Quick.
+    \meta {tag} {quick}
+
+    \image qmlmediaplayer.jpg
+
+    \e{QML Media Player} demonstrates a simple multimedia player that can play
+    audio and or video files using various codecs.
+
+    \include examples-run.qdocinc
+
+    The example uses the QML MediaPlayer object connected to a VideoOutput to
+    play back the video.
+
+    The example shows usage of some advanced features such as selection of audio
+    or subtitle tracks.
+*/

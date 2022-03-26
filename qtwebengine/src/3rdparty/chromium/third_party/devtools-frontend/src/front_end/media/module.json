@@ -1,0 +1,18 @@
+{
+  "dependencies": [
+    "components",
+    "ui",
+    "data_grid",
+    "source_frame",
+    "perf_ui"
+  ],
+  "modules": [
+    "media-legacy.js"
+  ],
+  "resources": [
+    "eventDisplayTable.css",
+    "playerListView.css",
+    "playerPropertiesView.css",
+    "playerMessagesView.css"
+  ]
+}

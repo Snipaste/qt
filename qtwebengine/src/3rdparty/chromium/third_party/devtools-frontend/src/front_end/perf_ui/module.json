@@ -1,0 +1,37 @@
+{
+  "extensions": [
+    {
+      "type": "late-initialization",
+      "className": "PerfUI.LiveHeapProfile",
+      "experiment": "liveHeapProfile",
+      "setting": "memoryLiveHeapProfile"
+    }
+  ],
+  "dependencies": [
+    "ui",
+    "source_frame",
+    "text_editor"
+  ],
+  "modules": [
+    "perf_ui.js",
+    "perf_ui-legacy.js",
+    "ChartViewport.js",
+    "FilmStripView.js",
+    "FlameChart.js",
+    "GCActionDelegate.js",
+    "LineLevelProfile.js",
+    "LiveHeapProfile.js",
+    "NetworkPriorities.js",
+    "OverviewGrid.js",
+    "TimelineGrid.js",
+    "TimelineOverviewPane.js"
+  ],
+  "resources": [
+    "chartViewport.css",
+    "filmStripView.css",
+    "flameChart.css",
+    "overviewGrid.css",
+    "timelineGrid.css",
+    "timelineOverviewInfo.css"
+  ]
+}

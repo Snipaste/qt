@@ -1,0 +1,6 @@
+{
+    "worker": true,
+    "modules": [
+        { "name": "lighthouse_worker", "type": "autostart" }
+    ]
+}

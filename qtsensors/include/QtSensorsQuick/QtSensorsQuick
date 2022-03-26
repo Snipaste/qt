@@ -1,0 +1,5 @@
+#ifndef QT_QTSENSORSQUICK_MODULE_H
+#define QT_QTSENSORSQUICK_MODULE_H
+#include <QtSensorsQuick/QtSensorsQuickDepends>
+#include "qtsensorsquickversion.h"
+#endif

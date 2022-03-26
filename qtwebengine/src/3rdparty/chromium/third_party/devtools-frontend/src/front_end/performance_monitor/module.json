@@ -1,0 +1,11 @@
+{
+  "dependencies": [
+    "ui"
+  ],
+  "modules": [
+    "performance_monitor-legacy.js"
+  ],
+  "resources": [
+    "performanceMonitor.css"
+  ]
+}

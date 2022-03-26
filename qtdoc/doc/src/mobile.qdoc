@@ -1,0 +1,85 @@
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \page mobiledevelopment.html
+    \title Mobile Development
+    \brief Development for mobile devices.
+
+    Qt supports development and deployment of mobile applications.
+
+    The following pages contain information about setting up Qt Creator and
+    how to get started with the mobile platforms:
+    \list
+        \li \l{Qt for Android}{Android}
+        \li \l{Qt for iOS}{iOS}
+    \endlist
+
+    \section1 Android
+
+    There is support for Android development in Qt 6. With Qt Creator, you can
+    connect to devices, develop, test, and package Android applications.
+
+    \include supported-platforms.qdocinc android
+
+    \list
+        \li \l{Qt for Android}
+        \li \l{Qt for Android Examples}{Android Examples}
+    \endlist
+
+    \section1 Apple Platforms - iOS, tvOS, and watchOS
+
+    There is support for various Apple mobile devices such as iPad,
+    iPhone, Apple TV, and Apple Watch. Qt Creator supplements \l Xcode for
+    development and deployment.
+
+    \include supported-platforms.qdocinc ios
+
+    \list
+        \li \l{Qt for iOS}
+        \li \l{Qt for iOS Examples}{iOS Examples}
+    \endlist
+
+    \section1 Tools for Mobile Development
+
+    \l{Qt Creator} is the IDE for Qt development. Qt Creator creates project
+    files, test and debug code, and connects to mobile devices. For Android, Qt
+    Creator can sign and package APK files, ready for publishing to Google Play.
+    \l Xcode is necessary for development on Apple platforms and Qt Creator can
+    create project files and connect to Apple devices for testing.
+
+    \section2 Design Tools for Mobile
+
+    Design tools aid UI development by allowing designers to create layouts and
+    animation that can be converted into Qt compatible formats. 2D and 3D assets
+    created from design software can be integrated into Qt applications.
+
+    \list
+        \li \l{Qt 3D Studio Manual}{Qt 3D Studio}
+        \li \l{Qt Design Studio Manual}{Qt Design Studio}
+    \endlist
+*/

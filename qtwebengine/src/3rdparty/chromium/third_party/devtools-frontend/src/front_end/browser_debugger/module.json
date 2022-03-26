@@ -1,0 +1,15 @@
+{
+  "dependencies": [
+    "elements",
+    "sources",
+    "console"
+  ],
+  "modules": [
+    "browser_debugger-legacy.js"
+  ],
+  "resources": [
+    "domBreakpointsSidebarPane.css",
+    "categorizedBreakpointsSidebarPane.css",
+    "xhrBreakpointsSidebarPane.css"
+  ]
+}

@@ -1,0 +1,12 @@
+[moveCursorBiggerJump]
+osx
+[mouseWheel:scroll down per pixel]
+macos
+
+# QTBUG-87407
+[rowViewportPosition]
+android
+[columnViewportPosition]
+android
+[task191545_dragSelectRows]
+android

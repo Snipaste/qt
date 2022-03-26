@@ -1,0 +1,107 @@
+/****************************************************************************
+**
+** Copyright (C) 2016 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example animation/sub-attaq
+    \title Sub-Attaq
+    \ingroup examples-qtstatemachine
+
+    \brief This example shows Qt's ability to combine
+    \l{The Animation Framework}{the animation framework}
+    and \l{Qt State Machine Overview}{the state machine framework} to create a
+    game.
+
+    \image sub-attaq-demo.png
+
+    The purpose of the game is to destroy all submarines to win the current
+    level. The boat can be controlled using left and right keys. To fire a bomb
+    you can press the up and down keys.
+
+    \section1 The \c main() Function
+
+    \snippet animation/sub-attaq/main.cpp 0
+
+    The MainWindow instance is created and shown.
+
+    \section1 The \c MainWindow Class
+
+    \snippet animation/sub-attaq/mainwindow.cpp 1
+
+    MainWindow extends QMainWindow and contains the GraphicsScene instance. It
+    creates and sets up the menu bar as well.
+
+    \section1 The \c GraphicsScene Class
+
+    There are several state machines in the application. The \c GraphicsScene
+    state machine handles states related to events outside the actual game scene
+    like the letter animation in the beginning.
+
+    \section2 The \c GraphicsScene Constructor
+
+    \snippet animation/sub-attaq/graphicsscene.cpp 2
+
+    The \c GraphicsScene class contains the background images and the score and
+    level information texts.
+
+    \section2 \c The setupScene Method
+
+    \snippet animation/sub-attaq/graphicsscene.cpp 3
+
+    The four state machine states are created with sequential transitions from
+    one to the next. The \c gameState also has a transition that is triggered
+    by \c newAction, the new game menu item, or its shortcut key at any point
+    in the application. The \c gameState state is an instance of the
+    \c PlayState class.
+
+    \image sub-attaq-graphicsscene-chart.png
+
+    \section1 The \c PlayState Class
+
+    The \c PlayState class is a QState derived class that handles the state when
+    the game is in progress.
+
+    \snippet animation/sub-attaq/states.cpp 4
+
+    The \c PlayState state machine handles higher level game logic like pausing
+    the game and updating the score.
+
+    \image sub-attaq-playstate-chart.png
+
+    The \c playingState state is a QState instance that is active while the user
+    is actively playing the game. The \c pauseState is set up with transitions
+    to and from \c playingState, which are triggered by pressing the p key.
+    The \c lostState is created with a transition to it, which is triggered when
+    the boat is destroyed. The \c winState is also created here with a
+    transition to and from the \c levelState.
+
+    \section1 The \c LevelState Class
+
+    \snippet animation/sub-attaq/states.cpp 5
+
+    The components of the scene are initialized based on what level the player
+    has reached.
+*/

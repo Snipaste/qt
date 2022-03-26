@@ -1,0 +1,17 @@
+# See qtbase/src/testlib/qtestblacklist.cpp for format
+
+# QTBUG-77946 QTBUG-88138
+[slider]
+*
+
+[position]
+opensuse-leap
+android # QTBUG-100257
+
+# QTBUG-100257
+[reposition]
+android
+[hover]
+android
+[multiTouch]
+android

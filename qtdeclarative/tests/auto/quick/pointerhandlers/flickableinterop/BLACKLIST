@@ -1,0 +1,9 @@
+[touchAndDragHandlerOnFlickable]
+windows gcc
+opensuse-leap
+[touchDragFlickableBehindSlider]
+windows gcc
+[touchDragFlickableBehindButton]
+windows gcc
+[touchDragSliderAndFlickable]
+* # QTBUG-86729

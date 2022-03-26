@@ -1,0 +1,5 @@
+add_subdirectory(cmake)
+add_subdirectory(webchannel)
+if(TARGET Qt::Quick)
+    add_subdirectory(qml)
+endif()

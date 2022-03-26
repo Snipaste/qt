@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "browser_sdk",
+    "ui"
+  ],
+  "modules": [
+    "console_counters-legacy.js"
+  ]
+}

@@ -1,0 +1,7 @@
+if(TARGET Qt::StateMachineQml)
+    add_subdirectory(qqmlstatemachine)
+    add_subdirectory(qqmlstatemachinemetatype)
+endif()
+if(TARGET Qt::ScxmlQml)
+    add_subdirectory(scxmlqmlcpp)
+endif()

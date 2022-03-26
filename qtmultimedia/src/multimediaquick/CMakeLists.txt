@@ -1,0 +1,40 @@
+#####################################################################
+## MultimediaQuickPrivate Module:
+#####################################################################
+
+set(qml_files
+    "Video.qml"
+)
+
+qt_internal_add_qml_module(MultimediaQuickPrivate
+    URI "QtMultimedia"
+    VERSION "${PROJECT_VERSION}"
+    PAST_MAJOR_VERSIONS 5
+    CLASS_NAME QMultimediaQuickModule
+    PLUGIN_TARGET quickmultimedia
+    NO_GENERATE_PLUGIN_SOURCE
+    NO_PLUGIN_OPTIONAL
+    DEPENDENCIES QtQuick
+    CONFIG_MODULE_NAME multimediaquick
+    INTERNAL_MODULE
+    SOURCES
+        qquickimagecapture.cpp qquickimagecapture_p.h
+        qquickimagepreviewprovider.cpp qquickimagepreviewprovider_p.h
+#        qquickplaylist.cpp qquickplaylist_p.h
+        qquickmediaplayer_p.h
+        qquicksoundeffect_p.h
+        qquickvideooutput.cpp qquickvideooutput_p.h
+        qsgvideonode_p.cpp qsgvideonode_p.h
+        qsgvideotexture.cpp qsgvideotexture_p.h
+        qtmultimediaquickglobal_p.h
+        qtmultimediaquicktypes_p.h
+    QML_FILES
+        ${qml_files}
+    PUBLIC_LIBRARIES
+        Qt::Core
+        Qt::MultimediaPrivate
+        Qt::Quick
+        Qt::QuickPrivate
+)
+
+target_sources(quickmultimedia PRIVATE multimedia_plugin.cpp)

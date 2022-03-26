@@ -1,0 +1,5 @@
+#ifndef QT_QTWAYLANDEGLCLIENTHWINTEGRATION_MODULE_H
+#define QT_QTWAYLANDEGLCLIENTHWINTEGRATION_MODULE_H
+#include <QtWaylandEglClientHwIntegration/QtWaylandEglClientHwIntegrationDepends>
+#include "qtwaylandeglclienthwintegrationversion.h"
+#endif

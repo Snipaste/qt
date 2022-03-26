@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "ui"
+  ],
+  "modules": [],
+  "resources": [
+    "spectrum.css"
+  ]
+}

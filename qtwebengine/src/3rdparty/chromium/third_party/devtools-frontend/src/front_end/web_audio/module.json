@@ -1,0 +1,13 @@
+{
+  "dependencies": [
+    "components",
+    "ui"
+  ],
+  "modules": [
+    "web_audio-legacy.js"
+  ],
+  "resources": [
+    "webAudio.css",
+    "audioContextSelector.css"
+  ]
+}

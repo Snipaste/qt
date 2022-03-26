@@ -1,0 +1,28 @@
+// Copyright 2017 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#ifndef COMPONENTS_PASSWORD_MANAGER_CORE_BROWSER_PASSWORD_STORE_SIGNIN_NOTIFIER_H_
+#define COMPONENTS_PASSWORD_MANAGER_CORE_BROWSER_PASSWORD_STORE_SIGNIN_NOTIFIER_H_
+
+namespace password_manager {
+
+class PasswordStore;
+
+// Abstract class for notifying PasswordStore about sign-in events.
+class PasswordStoreSigninNotifier {
+ public:
+  PasswordStoreSigninNotifier() = default;
+  virtual ~PasswordStoreSigninNotifier() = default;
+
+  PasswordStoreSigninNotifier(const PasswordStoreSigninNotifier&) = delete;
+  PasswordStoreSigninNotifier& operator=(const PasswordStoreSigninNotifier&) =
+      delete;
+
+  virtual void SubscribeToSigninEvents(PasswordStore* store) = 0;
+  virtual void UnsubscribeFromSigninEvents() = 0;
+};
+
+}  // namespace password_manager
+
+#endif  // COMPONENTS_PASSWORD_MANAGER_CORE_BROWSER_PASSWORD_STORE_SIGNIN_NOTIFIER_H_

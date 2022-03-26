@@ -1,0 +1,67 @@
+<style include="profile-creation-shared">
+  #actionContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #signinPromoBanner {
+    background-image: url(profile_creation_flow/images/banner_light_image.svg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #signinPromoBanner {
+      background-image:
+          url(profile_creation_flow/images/banner_dark_image.svg);
+    }
+  }
+
+  #bannerContainer {
+    height: 266px;
+    position: relative;
+    width: 100%;
+  }
+
+  cr-button {
+    font-size: 1em;
+    font-weight: normal;
+    min-width: 210px;
+  }
+
+  #notNowButton {
+    margin-top: 18px;
+  }
+
+  .title-container {
+    margin: 104px auto;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+</style>
+
+<div id="headerContainer"
+    style$="--theme-frame-color:[[profileThemeInfo.themeFrameColor]];
+            --theme-text-color:[[profileThemeInfo.themeFrameTextColor]];">
+  <cr-icon-button id="backButton" iron-icon="cr:arrow-back"
+      on-click="onClickBack_" aria-label="$i18n{backButtonLabel}"
+      disabled="[[loadSigninInProgess_]]">
+  </cr-icon-button>
+  <div id="signinPromoBanner" class="banner"></div>
+  <div id="avatarContainer">
+    <img class="avatar" alt="" src="[[profileThemeInfo.themeGenericAvatar]]">
+  </div>
+</div>
+<div class="title-container">
+  <h2>$i18n{profileTypeChoiceTitle}</h2>
+  <h3>$i18n{profileTypeChoiceSubtitle}</h3>
+</div>
+<div id="actionContainer">
+  <cr-button id="signInButton" class="action-button" on-click="onSignInClick_"
+      disabled="[[loadSigninInProgess_]]">
+    $i18n{signInButtonLabel}
+  </cr-button>
+  <cr-button id="notNowButton" on-click="onNotNowClick_"
+      disabled="[[loadSigninInProgess_]]">
+    $i18n{notNowButtonLabel}
+  </cr-button>
+</div>

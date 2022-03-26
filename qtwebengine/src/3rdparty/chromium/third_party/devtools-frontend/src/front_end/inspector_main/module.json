@@ -1,0 +1,19 @@
+{
+  "extensions": [
+    {
+      "type": "early-initialization",
+      "className": "InspectorMain.InspectorMain"
+    }
+  ],
+  "dependencies": [
+    "components",
+    "mobile_throttling"
+  ],
+  "modules": [
+    "inspector_main-legacy.js"
+  ],
+  "resources": [
+    "nodeIcon.css",
+    "renderingOptions.css"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "Id": "tinycbor",
+    "Name": "TinyCBOR",
+    "QDocModule": "qtcore",
+    "QtUsage": "Used for QCborStreamReader and QCborStreamWriter.",
+
+    "Description": "Concise Binary Object Representation (CBOR) Library",
+    "Homepage": "https://github.com/intel/tinycbor",
+    "License": "MIT License",
+    "LicenseId": "MIT",
+    "LicenseFile": "LICENSE",
+    "DownloadLocation": "https://github.com/thiagomacieira/tinycbor/archive/e6a4fa4862bcc3a6f6b07cf9d9b784d0ab6068b4.tar.gz",
+    "Version": "0.6+patches",
+    "Copyright": "Copyright (C) 2015-2019 Intel Corporation"
+}

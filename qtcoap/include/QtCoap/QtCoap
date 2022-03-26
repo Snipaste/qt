@@ -1,0 +1,15 @@
+#ifndef QT_QTCOAP_MODULE_H
+#define QT_QTCOAP_MODULE_H
+#include <QtCoap/QtCoapDepends>
+#include "qcoapglobal.h"
+#include "qcoapclient.h"
+#include "qcoapmessage.h"
+#include "qcoapnamespace.h"
+#include "qcoapoption.h"
+#include "qcoapreply.h"
+#include "qcoaprequest.h"
+#include "qcoapresource.h"
+#include "qcoapresourcediscoveryreply.h"
+#include "qcoapsecurityconfiguration.h"
+#include "qtcoapversion.h"
+#endif

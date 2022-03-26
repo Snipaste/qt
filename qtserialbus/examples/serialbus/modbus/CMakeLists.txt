@@ -1,0 +1,3 @@
+qt_internal_add_example(client)
+qt_internal_add_example(server)
+qt_internal_add_example(custom)

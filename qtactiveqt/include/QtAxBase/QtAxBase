@@ -1,0 +1,5 @@
+#ifndef QT_QTAXBASE_MODULE_H
+#define QT_QTAXBASE_MODULE_H
+#include <QtAxBase/QtAxBaseDepends>
+#include "qtaxbaseversion.h"
+#endif

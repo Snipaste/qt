@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.16)
+project(loadfromdata LANGUAGES CXX)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+find_package(Qt6 REQUIRED COMPONENTS Core Gui)
+
+qt_add_executable(loadfromdata
+    main.cpp
+)
+
+target_link_libraries(loadfromdata PUBLIC
+    Qt::Core
+    Qt::Gui
+)
+if(DEFINED ENV{LIB_FUZZING_ENGINE})
+    target_link_libraries(loadfromdata PRIVATE
+        $ENV{LIB_FUZZING_ENGINE}
+    )
+else()
+    target_link_libraries(loadfromdata PRIVATE
+        -fsanitize=fuzzer
+    )
+endif()
+
+qt_import_plugins(loadfromdata
+    INCLUDE Qt::QMinimalIntegrationPlugin
+)

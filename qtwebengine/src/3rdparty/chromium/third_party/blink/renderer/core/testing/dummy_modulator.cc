@@ -1,0 +1,207 @@
+// Copyright 2017 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#include "third_party/blink/renderer/core/testing/dummy_modulator.h"
+
+#include "third_party/blink/renderer/bindings/core/v8/module_record.h"
+#include "third_party/blink/renderer/bindings/core/v8/script_value.h"
+#include "third_party/blink/renderer/core/loader/modulescript/module_script_creation_params.h"
+#include "third_party/blink/renderer/core/script/module_record_resolver.h"
+
+namespace blink {
+
+namespace {
+
+class EmptyModuleRecordResolver final : public ModuleRecordResolver {
+ public:
+  EmptyModuleRecordResolver() = default;
+
+  // We ignore {Unr,R}egisterModuleScript() calls caused by
+  // ModuleScript::CreateForTest().
+  void RegisterModuleScript(const ModuleScript*) override {}
+  void UnregisterModuleScript(const ModuleScript*) override {}
+
+  const ModuleScript* GetModuleScriptFromModuleRecord(
+      v8::Local<v8::Module>) const override {
+    NOTREACHED();
+    return nullptr;
+  }
+
+  v8::Local<v8::Module> Resolve(const ModuleRequest& module_request,
+                                v8::Local<v8::Module> referrer,
+                                ExceptionState&) override {
+    NOTREACHED();
+    return v8::Local<v8::Module>();
+  }
+};
+
+}  // namespace
+
+DummyModulator::DummyModulator()
+    : resolver_(MakeGarbageCollected<EmptyModuleRecordResolver>()) {}
+
+DummyModulator::~DummyModulator() = default;
+
+void DummyModulator::Trace(Visitor* visitor) const {
+  visitor->Trace(resolver_);
+  Modulator::Trace(visitor);
+}
+
+ScriptState* DummyModulator::GetScriptState() {
+  NOTREACHED();
+  return nullptr;
+}
+
+mojom::blink::V8CacheOptions DummyModulator::GetV8CacheOptions() const {
+  return mojom::blink::V8CacheOptions::kDefault;
+}
+
+bool DummyModulator::IsScriptingDisabled() const {
+  return false;
+}
+
+bool DummyModulator::ImportMapsEnabled() const {
+  return false;
+}
+
+ModuleRecordResolver* DummyModulator::GetModuleRecordResolver() {
+  return resolver_.Get();
+}
+
+base::SingleThreadTaskRunner* DummyModulator::TaskRunner() {
+  NOTREACHED();
+  return nullptr;
+}
+
+void DummyModulator::FetchTree(const KURL&,
+                               ModuleType,
+                               ResourceFetcher*,
+                               mojom::blink::RequestContextType,
+                               network::mojom::RequestDestination,
+                               const ScriptFetchOptions&,
+                               ModuleScriptCustomFetchType,
+                               ModuleTreeClient*) {
+  NOTREACHED();
+}
+
+void DummyModulator::FetchSingle(const ModuleScriptFetchRequest&,
+                                 ResourceFetcher*,
+                                 ModuleGraphLevel,
+                                 ModuleScriptCustomFetchType,
+                                 SingleModuleClient*) {
+  NOTREACHED();
+}
+
+void DummyModulator::FetchDescendantsForInlineScript(
+    ModuleScript*,
+    ResourceFetcher*,
+    mojom::blink::RequestContextType,
+    network::mojom::RequestDestination,
+    ModuleTreeClient*) {
+  NOTREACHED();
+}
+
+ModuleScript* DummyModulator::GetFetchedModuleScript(const KURL&, ModuleType) {
+  NOTREACHED();
+  return nullptr;
+}
+
+KURL DummyModulator::ResolveModuleSpecifier(const String&,
+                                            const KURL&,
+                                            String*) {
+  NOTREACHED();
+  return KURL();
+}
+
+bool DummyModulator::HasValidContext() {
+  return true;
+}
+
+void DummyModulator::ResolveDynamically(const ModuleRequest& module_request,
+                                        const KURL&,
+                                        const ReferrerScriptInfo&,
+                                        ScriptPromiseResolver*) {
+  NOTREACHED();
+}
+
+ScriptValue DummyModulator::CreateTypeError(const String& message) const {
+  NOTREACHED();
+  return ScriptValue();
+}
+ScriptValue DummyModulator::CreateSyntaxError(const String& message) const {
+  NOTREACHED();
+  return ScriptValue();
+}
+
+void DummyModulator::RegisterImportMap(const ImportMap*,
+                                       ScriptValue error_to_rethrow) {
+  NOTREACHED();
+}
+
+Modulator::AcquiringImportMapsState
+DummyModulator::GetAcquiringImportMapsState() const {
+  NOTREACHED();
+  return AcquiringImportMapsState::kAcquiring;
+}
+
+void DummyModulator::SetAcquiringImportMapsState(AcquiringImportMapsState) {
+  NOTREACHED();
+}
+
+const ImportMap* DummyModulator::GetImportMapForTest() const {
+  NOTREACHED();
+  return nullptr;
+}
+
+ModuleImportMeta DummyModulator::HostGetImportMetaProperties(
+    v8::Local<v8::Module>) const {
+  NOTREACHED();
+  return ModuleImportMeta(String());
+}
+
+ScriptValue DummyModulator::InstantiateModule(v8::Local<v8::Module>,
+                                              const KURL&) {
+  NOTREACHED();
+  return ScriptValue();
+}
+
+Vector<ModuleRequest> DummyModulator::ModuleRequestsFromModuleRecord(
+    v8::Local<v8::Module>) {
+  NOTREACHED();
+  return Vector<ModuleRequest>();
+}
+
+ModuleType DummyModulator::ModuleTypeFromRequest(
+    const ModuleRequest& module_request) const {
+  String module_type_string = module_request.GetModuleTypeString();
+  if (module_type_string.IsNull()) {
+    // Per https://github.com/whatwg/html/pull/5883, if no type assertion is
+    // provided then the import should be treated as a JavaScript module.
+    return ModuleType::kJavaScript;
+  } else if (module_type_string == "json") {
+    // Per https://github.com/whatwg/html/pull/5658, a "json" type assertion
+    // indicates that the import should be treated as a JSON module script.
+    return ModuleType::kJSON;
+  } else if (module_type_string == "css") {
+    // Per https://github.com/whatwg/html/pull/4898, a "css" type assertion
+    // indicates that the import should be treated as a CSS module script.
+    return ModuleType::kCSS;
+  } else {
+    // Per https://github.com/whatwg/html/pull/5883, if an unsupported type
+    // assertion is provided then the import should be treated as an error
+    // similar to an invalid module specifier.
+    return ModuleType::kInvalid;
+  }
+}
+
+ModuleScriptFetcher* DummyModulator::CreateModuleScriptFetcher(
+    ModuleScriptCustomFetchType,
+    base::PassKey<ModuleScriptLoader> pass_key) {
+  NOTREACHED();
+  return nullptr;
+}
+
+void DummyModulator::ProduceCacheModuleTreeTopLevel(ModuleScript*) {}
+
+}  // namespace blink

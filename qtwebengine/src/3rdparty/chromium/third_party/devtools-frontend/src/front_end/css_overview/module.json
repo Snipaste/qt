@@ -1,0 +1,10 @@
+{
+  "modules": [],
+  "resources": [
+    "cssOverview.css",
+    "cssOverviewStartView.css",
+    "cssOverviewProcessingView.css",
+    "cssOverviewCompletedView.css",
+    "cssOverviewSidebarPanel.css"
+  ]
+}

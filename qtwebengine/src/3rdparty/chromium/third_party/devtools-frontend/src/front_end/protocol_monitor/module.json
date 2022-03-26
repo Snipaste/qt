@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    "ui",
+    "components",
+    "data_grid",
+    "source_frame"
+  ],
+  "modules": [
+    "protocol_monitor-legacy.js"
+  ],
+  "resources": [
+    "protocolMonitor.css"
+  ]
+}

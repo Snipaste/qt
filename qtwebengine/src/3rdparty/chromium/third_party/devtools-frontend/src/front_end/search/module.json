@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    "components"
+  ],
+  "modules": [
+    "search-legacy.js"
+  ],
+  "resources": [
+    "searchResultsPane.css",
+    "searchView.css"
+  ]
+}

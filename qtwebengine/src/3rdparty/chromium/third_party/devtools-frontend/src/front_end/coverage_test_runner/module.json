@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "test_runner",
+    "coverage",
+    "sources_test_runner"
+  ],
+  "modules": [
+    "coverage_test_runner.js"
+  ]
+}

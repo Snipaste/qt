@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "test_runner"
+  ],
+  "modules": [
+    "../third_party/axe-core/axe.js",
+    "axe_core_test_runner.js"
+  ]
+}

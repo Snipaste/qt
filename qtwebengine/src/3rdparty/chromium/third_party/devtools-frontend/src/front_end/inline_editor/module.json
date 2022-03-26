@@ -1,0 +1,15 @@
+{
+  "dependencies": [
+    "ui"
+  ],
+  "modules": [],
+  "resources": [
+    "bezierEditor.css",
+    "colorSwatch.css",
+    "bezierSwatch.css",
+    "cssShadowSwatch.css",
+    "cssShadowEditor.css",
+    "fontEditor.css",
+    "swatchPopover.css"
+  ]
+}

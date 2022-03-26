@@ -1,0 +1,97 @@
+/****************************************************************************
+**
+** Copyright (C) 2016 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example animation/animatedtiles
+    \title Animated Tiles Example
+    \ingroup examples-qtstatemachine
+
+    \brief The Animated Tiles example animates items in a graphics scene.
+
+    The example demonstrates how QStateMachine states can be used to animate
+    positions of graphical objects. There are five states in the application that
+    can be triggered by five buttons. The buttons initiate state transitions
+    that animate the positions of 64 QGraphicsPixmapItem images.
+
+    \image animatedtiles-example.png
+
+    \section1 The \c main() Function
+
+    \snippet animation/animatedtiles/main.cpp 0
+
+    The QGraphicsScene is created, then the 64 images are created and added to the scene
+    with the initial position of the center of the window.
+    The Pixmap class is defined in the example that extends the QGraphicsPixmapItem so that
+    its position can be read and written as Qt properties.
+
+    \snippet animation/animatedtiles/main.cpp 1
+
+    Then the five buttons are created and added to a QGraphicsItem for easier positioning.
+    The Button class is defined in the example. It extends QGraphicsWidget and implements
+    displaying a QPixmap on a circular background with shading based on its pressed state.
+
+    \snippet animation/animatedtiles/main.cpp 2
+
+    The states are created and added to a root state.
+
+    \image animated-tiles-chart.png
+
+    Having the five states as child states of \c rootState allows state transitions from any
+    of the child states to any other child state if the state transitions are set up from
+    \c rootState to the child states.
+
+    \snippet animation/animatedtiles/main.cpp 3
+
+    For each image, the position properties are set to each state based on a function that
+    creates the required shape. The states set these properties to the images when the
+    given state is entered.
+
+    \snippet animation/animatedtiles/main.cpp 4
+
+    The QGraphicsView is created and set up with the required properties.
+
+    \snippet animation/animatedtiles/main.cpp 5
+
+    The state machine is created and the previously created states are added with the \c rootState
+    set as the initial state.
+
+    \snippet animation/animatedtiles/main.cpp 6
+
+    The QParallelAnimationGroup is created with a QPropertyAnimation for each item that animates
+    the item position values.
+
+    \snippet animation/animatedtiles/main.cpp 7
+
+    The state transitions are created with the button presses as their triggers and the animation
+    group assigned to them.
+
+    \snippet animation/animatedtiles/main.cpp 8
+
+    An initial state transition is set up from root to ellipse state that is triggered with a
+    QTimer after application start.
+*/
+

@@ -1,0 +1,39 @@
+# OWNERS_STATUS = build/OWNERS.status
+
+# Eng reviewer. Please reach out before adding new top-level directories.
+# Note: this list is not for rubber-stamping mechanical changes that span the
+# code base. Please reach out to owners of top-level directories instead.
+file://ENG_REVIEW_OWNERS
+
+# For global approvals. When an API changes in one of these directories the
+# owner's +1 will therefore remove the need to get +1 for each other directory
+# that was affected as a result.
+file://base/OWNERS
+file://content/OWNERS
+file://third_party/blink/public/OWNERS
+
+per-file .clang-format=thakis@chromium.org
+per-file .clang-tidy=file://styleguide/c++/OWNERS
+per-file .eslintrc.js=file://tools/web_dev_style/OWNERS
+per-file .gitattributes=*
+per-file .gitignore=*
+per-file .git-blame-ignore-revs=mgiuca@chromium.org
+per-file .git-blame-ignore-revs=thakis@chromium.org
+per-file .gn=estaab@chromium.org
+per-file .vpython*=dpranke@google.com
+per-file .vpython*=iannucci@chromium.org
+per-file .yapfignore=*
+per-file AUTHORS=*
+per-file CODE_OF_CONDUCT.md=dpranke@google.com
+per-file CODE_OF_CONDUCT.md=groby@chromium.org
+per-file DEPS=*
+per-file PRESUBMIT*.py=agrieve@chromium.org  # For .pydeps changes
+per-file PRESUBMIT*.py=dcheng@chromium.org
+per-file PRESUBMIT*.py=dpranke@google.com
+per-file PRESUBMIT*.py=jochen@chromium.org
+per-file README.md=*
+per-file WATCHLISTS=*
+per-file *.pydeps=file://build/OWNERS
+per-file *.gn=file://build/OWNERS
+per-file *.gni=file://build/OWNERS
+per-file *fuzzer.*=file://testing/libfuzzer/OWNERS

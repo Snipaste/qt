@@ -1,0 +1,16 @@
+{
+  "dependencies": [
+    "workspace_diff",
+    "text_editor",
+    "persistence",
+    "snippets",
+    "ui"
+  ],
+  "modules": [
+    "changes-legacy.js"
+  ],
+  "resources": [
+    "changesView.css",
+    "changesSidebar.css"
+  ]
+}

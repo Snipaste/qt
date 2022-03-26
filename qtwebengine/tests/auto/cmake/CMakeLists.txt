@@ -1,0 +1,16 @@
+
+cmake_minimum_required(VERSION 3.16)
+
+project(qmake_cmake_files)
+
+enable_testing()
+
+find_package(Qt5Core REQUIRED)
+
+include("${_Qt5CTestMacros}")
+
+if (NOT NO_WIDGETS)
+    test_module_includes(
+      WebEngineWidgets QWebEngineView
+    )
+endif()

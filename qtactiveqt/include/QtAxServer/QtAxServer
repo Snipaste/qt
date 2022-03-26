@@ -1,0 +1,8 @@
+#ifndef QT_QTAXSERVER_MODULE_H
+#define QT_QTAXSERVER_MODULE_H
+#include <QtAxServer/QtAxServerDepends>
+#include "qaxaggregated.h"
+#include "qaxbindable.h"
+#include "qaxfactory.h"
+#include "qtaxserverversion.h"
+#endif

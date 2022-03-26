@@ -1,0 +1,5 @@
+#ifndef QT_QTPDFQUICK_MODULE_H
+#define QT_QTPDFQUICK_MODULE_H
+#include <QtPdfQuick/QtPdfQuickDepends>
+#include "qtpdfquickversion.h"
+#endif

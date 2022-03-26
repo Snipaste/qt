@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    "persistence"
+  ],
+  "modules": [
+    "workspace_diff-legacy.js"
+  ]
+}

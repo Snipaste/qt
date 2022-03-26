@@ -1,0 +1,20 @@
+# Generated from qmltestrunner.pro.
+
+#####################################################################
+## qmltestrunner Tool:
+#####################################################################
+
+qt_get_tool_target_name(target_name qmltestrunner)
+qt_internal_add_tool(${target_name}
+    TARGET_DESCRIPTION "QML Test Runner"
+    TOOLS_TARGET Qml # special case
+    SOURCES
+        main.cpp
+    PUBLIC_LIBRARIES
+        Qt::Gui
+        Qt::Qml
+        Qt::QuickTest
+)
+
+#### Keys ignored in scope 1:.:.:qmltestrunner.pro:<TRUE>:
+# QMAKE_TARGET_DESCRIPTION = "QML" "Test" "Runner"

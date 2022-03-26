@@ -1,0 +1,11 @@
+{
+  "dependencies": [
+    "ui"
+  ],
+  "modules": [
+    "input-legacy.js"
+  ],
+  "resources": [
+    "inputTimeline.css"
+  ]
+}

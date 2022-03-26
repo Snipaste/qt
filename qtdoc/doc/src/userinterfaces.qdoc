@@ -1,0 +1,183 @@
+/****************************************************************************
+**
+** Copyright (C) 2020 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+\page topics-ui.html
+\title User Interfaces
+\brief Qt's technologies for Creating User Interfaces
+
+The Qt framework's main user interface technologies are \b{Qt Quick Controls}
+and \b{Qt Widgets}. Qt Quick Control interfaces are fluid, dynamic, and are best
+on touch interfaces. Qt Widgets are for creating complex desktop applications.
+You can create Qt Quick Controls and Qt Widgets interfaces with the target
+platform's native look and feel.
+
+\section1 Building UIs with Qt Quick Controls
+
+Qt Quick Controls is for creating dynamic and fluid user interfaces. The
+\l{Qt Quick Controls} module supplies QML types such as buttons, dialogs, and
+menus. You can use QML, a declarative language, to build the UI and JavaScript
+to implement the logic.
+
+The following list contains related overviews:
+\list
+\li \l{Qt Quick Controls}
+\li \l{QML Applications} - introduction to QML
+\li \l{qtquick-usecase-visual.html}{Visual types in QML}
+\li \l{qtquick-usecase-userinput.html}{Responding to User Input in QML}
+\li \l{qtquick-usecase-animations.html}{Animations in QML}
+\li \l{qtquick-usecase-text.html}{Displaying Text in QML}
+\li \l{qtquick-usecase-layouts.html}{Layouts in QML}
+\li \l{qtquick-usecase-styling.html}{Style and Theme Support}
+\li \l{qtquick-usecase-integratingjs.html}{Integrating JavaScript in QML}
+\li \l{Qt Quick 3D} - add-on for 3D graphics
+\li \l{Qt Shader Tools} - add-on shader effects
+\endlist
+
+\section1 Qt Widgets User Interfaces
+
+\l {Qt Widgets} are the user interface elements that are typical in desktop
+environments. The widgets integrate well to the underlying platform providing
+native look and feel on Windows, Linux and \macos. The widgets are
+mature and feature rich user interface elements suitable for mostly traditional
+user interfaces. In contrast to \l {Qt Quick}, the widgets are for creating
+large desktop applications and less suited for creating touch-centric
+applications with fluid interfaces.
+
+The following list contains related overviews for Qt Widgets:
+\list
+\li \l{Widgets Classes}
+\li \l{Animation Framework}
+\li \l{Application Main Window}
+\li \l{Dialog Windows}
+\li \l{Drag and Drop}
+\li \l{Gestures in Widgets and Graphics View}
+\li \l{Layout Management}
+\li \l{Window and Dialog Widgets}
+\li \l{Styles and Style Aware Widgets}
+\endlist
+
+\section2 Comparison of UI Interfaces
+
+The following table compares Qt Widgets and Qt Quick interfaces.
+
+\table
+    \header
+        \li
+        \li Qt Quick / Qt Quick Controls
+        \li Qt Widgets
+        \li Comments
+    \row
+        \li Used language(s)
+        \li \l{QML Applications}{QML/JS}
+        \li C++
+        \li
+    \row
+        \li Native look and feel
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt Widgets and Qt Quick Controls support native look and feel on
+            their target platforms.
+    \row
+        \li Custom styling
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt Widgets provide customization with
+            \l{Qt Style Sheets}{style sheets} and Qt Quick Controls has a
+            selection of \l{Styling Qt Quick Controls}{customizable styles}.
+    \row
+        \li Fluid animated UIs
+        \li \inlineimage ok
+        \li
+        \li Qt Widgets do not scale well for animations. Qt Quick Controls
+            offers a convenient and natural way to implement animations in a
+            declarative manner.
+    \row
+        \li Touch screen
+        \li \inlineimage ok
+        \li
+        \li Qt Widgets often require a mouse cursor for good interaction, whereas
+            Qt Quick Controls provides QML types for touch interaction.
+    \row
+        \li Standard industry widgets
+        \li
+        \li \inlineimage ok
+        \li Qt Widgets provide all the bells and whistles, developed over two
+            decades, needed for building standard industry type applications.
+    \row
+        \li Model/View programming
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt Quick provides convenient views, but Qt Widgets provide more
+            convenient and complete framework. In addition to Qt Quick views,
+            Qt Quick Controls provide a TableView.
+    \row
+        \li Rapid UI development
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt Quick is an excellent choice for rapid UI prototyping and development.
+    \row
+        \li HW accelerated graphics
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt provides full hardware acceleration for Qt Quick interfaces and
+            Qt Widgets interfaces are rendered in software. The \l{Graphics}
+            overview has more information.
+    \row
+        \li Graphical effects
+        \li \inlineimage ok
+        \li
+        \li Several Qt Quick modules provide graphical effects and Qt Widgets
+            interfaces can use \l{Qt GUI} for effects.
+    \row
+        \li Rich text processing
+        \li \inlineimage ok
+        \li \inlineimage ok
+        \li Qt Widgets currently provide the most comprehensive base for implementing
+            text editors. Qt's rich text document classes can also be utilized in
+            Qt Quick and Qt Quick Controls' TextArea, but may require some C++
+            implementation.
+    \row
+
+\endtable
+
+
+\section1 Related Topics
+
+The following pages contain more information about designing and developing user
+interfaces:
+
+\list
+\li \l{Design Tools} - overview of user interface tools for designers and
+    developers
+\li \l{Graphics} - graphics overview
+\li \l{Model/View Programming}
+\li \l{High DPI}
+\endlist
+
+*/
+

@@ -1,0 +1,5 @@
+#ifndef QT_QTQUICK3DASSETUTILS_MODULE_H
+#define QT_QTQUICK3DASSETUTILS_MODULE_H
+#include <QtQuick3DAssetUtils/QtQuick3DAssetUtilsDepends>
+#include "qtquick3dassetutilsversion.h"
+#endif

@@ -1,0 +1,6 @@
+
+USE_ENUM(Qt::DayOfWeek)
+
+class TestInterface
+{
+};

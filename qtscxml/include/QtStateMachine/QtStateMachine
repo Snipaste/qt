@@ -1,0 +1,36 @@
+#ifndef QT_QTSTATEMACHINE_MODULE_H
+#define QT_QTSTATEMACHINE_MODULE_H
+#include <QtStateMachine/QtStateMachineDepends>
+#include "qstatemachineglobal.h"
+#if QT_CONFIG(statemachine)
+#include "qabstractstate.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qabstracttransition.h"
+#endif
+#if QT_CONFIG(qeventtransition)
+#include "qeventtransition.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qfinalstate.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qhistorystate.h"
+#endif
+#if QT_CONFIG(qeventtransition)
+#include "qkeyeventtransition.h"
+#endif
+#if QT_CONFIG(qeventtransition)
+#include "qmouseeventtransition.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qsignaltransition.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qstate.h"
+#endif
+#if QT_CONFIG(statemachine)
+#include "qstatemachine.h"
+#endif
+#include "qtstatemachineversion.h"
+#endif

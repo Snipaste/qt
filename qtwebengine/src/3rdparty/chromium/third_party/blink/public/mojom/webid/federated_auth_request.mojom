@@ -1,0 +1,33 @@
+// Copyright 2020 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module blink.mojom;
+
+import "url/mojom/url.mojom";
+
+// Implementation of the proposed WebID API.
+//
+// Proposal: https://github.com/WICG/WebID
+
+enum RequestIdTokenStatus {
+  kSuccess,
+  kApprovalDeclined,
+  kErrorTooManyRequests,
+  kErrorWebIdNotSupportedByProvider,
+  kErrorFetchingWellKnown,
+  kErrorInvalidWellKnown,
+  kErrorFetchingSignin,
+  kErrorInvalidSigninResponse,
+  kError,
+};
+
+// Create a federated sign-in request using the specified provider.
+// This interface is called from a renderer process and implemented in the
+// browser process.
+interface FederatedAuthRequest {
+  // Requests an IdToken to be generated, given an IDP URL and an OAuth request.
+  // Returns the raw content of the IdToken.
+  RequestIdToken(url.mojom.Url provider, string id_request) => (RequestIdTokenStatus status, string? id_token);
+};
+

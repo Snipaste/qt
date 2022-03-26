@@ -1,0 +1,13 @@
+{
+  "dependencies": [
+    "components"
+  ],
+  "modules": [
+    "settings-legacy.js"
+  ],
+  "resources": [
+    "frameworkIgnoreListSettingsTab.css",
+    "settingsScreen.css",
+    "keybindsSettingsTab.css"
+  ]
+}

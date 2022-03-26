@@ -1,0 +1,5 @@
+#ifndef QT_QTWAYLANDEGLCOMPOSITORHWINTEGRATION_MODULE_H
+#define QT_QTWAYLANDEGLCOMPOSITORHWINTEGRATION_MODULE_H
+#include <QtWaylandEglCompositorHwIntegration/QtWaylandEglCompositorHwIntegrationDepends>
+#include "qtwaylandeglcompositorhwintegrationversion.h"
+#endif

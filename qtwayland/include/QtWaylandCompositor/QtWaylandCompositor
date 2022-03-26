@@ -1,0 +1,67 @@
+#ifndef QT_QTWAYLANDCOMPOSITOR_MODULE_H
+#define QT_QTWAYLANDCOMPOSITOR_MODULE_H
+#include <QtWaylandCompositor/QtWaylandCompositorDepends>
+#include "qtwaylandcompositorglobal.h"
+#include "qtwaylandqmlinclude.h"
+#include "qwaylandbufferref.h"
+#include "qwaylandclient.h"
+#include "qwaylandcompositor.h"
+#include "qwaylandcompositorextension.h"
+#include "qwaylanddestroylistener.h"
+#if QT_CONFIG(draganddrop)
+#include "qwaylanddrag.h"
+#endif
+#include "qwaylandidleinhibitv1.h"
+#include "qwaylandinputmethodcontrol.h"
+#include "qwaylandiviapplication.h"
+#include "qwaylandivisurface.h"
+#include "qwaylandkeyboard.h"
+#include "qwaylandkeymap.h"
+#include "qwaylandoutput.h"
+#include "qwaylandoutputmode.h"
+#include "qwaylandpointer.h"
+#include "qwaylandqttextinputmethod.h"
+#include "qwaylandqttextinputmethodmanager.h"
+#include "qwaylandqtwindowmanager.h"
+#include "qwaylandquickchildren.h"
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickcompositor.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickextension.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickitem.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickoutput.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickshellintegration.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickshellsurfaceitem.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquicksurface.h"
+#endif
+#if QT_CONFIG(wayland_compositor_quick)
+#include "qwaylandquickxdgoutputv1.h"
+#endif
+#include "qwaylandresource.h"
+#include "qwaylandseat.h"
+#include "qwaylandshell.h"
+#include "qwaylandshellsurface.h"
+#include "qwaylandsurface.h"
+#include "qwaylandsurfacegrabber.h"
+#include "qwaylandtextinput.h"
+#include "qwaylandtextinputmanager.h"
+#include "qwaylandtouch.h"
+#include "qwaylandview.h"
+#include "qwaylandviewporter.h"
+#include "qwaylandwlshell.h"
+#include "qwaylandxdgdecorationv1.h"
+#include "qwaylandxdgoutputv1.h"
+#include "qwaylandxdgshell.h"
+#include "qtwaylandcompositorversion.h"
+#endif

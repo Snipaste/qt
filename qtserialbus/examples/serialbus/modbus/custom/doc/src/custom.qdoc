@@ -1,0 +1,50 @@
+/****************************************************************************
+**
+** Copyright (C) 2021 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*! \example modbus/custom
+    \title Modbus Custom command example
+
+    \brief The example implements a Modbus client-server application.
+
+    The example acts as both Modbus client and server in a single application.
+    The connection between them is established via Modbus TCP. It is used to
+    send and receive custom Modbus requests and adjusts its internal states
+    based on the request and response.
+
+    \image ../images/custom.png
+
+    \include examples-run.qdocinc
+
+    This example cannot be used in conjunction with other applications. Once the
+    example is started, it can only exchange custom Modbus commands within the
+    application itself. All interactions between the client and server use the
+    Modbus TCP protocol.
+
+    The main purpose of the example is to provide some demo code on how to
+    implement a Modbus client or Modbus server handling custom Modbus function
+    codes.
+*/

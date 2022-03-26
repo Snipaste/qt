@@ -1,0 +1,14 @@
+# Generated from dbus.pro.
+
+if(NOT TARGET Qt::DBus)
+    return()
+endif()
+qt_internal_add_example(listnames)
+qt_internal_add_example(pingpong)
+if(QT_FEATURE_process)
+    qt_internal_add_example(complexpingpong)
+endif()
+if(TARGET Qt::Widgets)
+    qt_internal_add_example(chat)
+    add_subdirectory(remotecontrolledcar)
+endif()

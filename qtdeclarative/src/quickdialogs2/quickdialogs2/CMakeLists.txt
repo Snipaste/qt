@@ -1,0 +1,44 @@
+#####################################################################
+## QuickDialogs2 Module:
+#####################################################################
+
+qt_internal_add_qml_module(QuickDialogs2
+    URI "QtQuick.Dialogs"
+    VERSION "${PROJECT_VERSION}"
+    CLASS_NAME QtQuickDialogsPlugin
+    PLUGIN_TARGET qtquickdialogsplugin
+    DEPENDENCIES
+        QtQuick/auto
+    SOURCES
+        qquickabstractdialog.cpp
+        qquickabstractdialog_p.h
+        qquickfiledialog.cpp
+        qquickfiledialog_p.h
+        qquickfontdialog.cpp
+        qquickfontdialog_p.h
+        qtquickdialogs2foreign_p.h
+        qtquickdialogs2global_p.h
+    DEFINES
+        QT_BUILD_QUICKDIALOGS2_LIB
+        QT_NO_CAST_FROM_ASCII
+        QT_NO_CAST_TO_ASCII
+    INCLUDE_DIRECTORIES
+        ${CMAKE_CURRENT_SOURCE_DIR}
+    LIBRARIES
+        Qt::CorePrivate
+        Qt::GuiPrivate
+        Qt::QmlPrivate
+        Qt::QuickPrivate
+        Qt::QuickDialogs2Utils
+        Qt::QuickDialogs2UtilsPrivate
+        Qt::QuickDialogs2QuickImpl
+        Qt::QuickDialogs2QuickImplPrivate
+    PUBLIC_LIBRARIES
+        Qt::Core
+        Qt::Gui
+        Qt::Quick
+)
+
+qt_internal_add_docs(QuickDialogs2
+    doc/qtquickdialogs.qdocconf
+)

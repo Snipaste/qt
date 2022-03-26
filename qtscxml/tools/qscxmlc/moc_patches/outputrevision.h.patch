@@ -1,0 +1,25 @@
+--- .upstream/outputrevision.h	2021-01-20 17:08:05.000000000 +0200
++++ outputrevision.h	2021-03-19 15:52:02.000000000 +0200
+@@ -3,7 +3,7 @@
+ ** Copyright (C) 2016 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+-** This file is part of the tools applications of the Qt Toolkit.
++** This file is part of the QtScxml module of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+ ** Commercial License Usage
+@@ -29,7 +29,13 @@
+ #ifndef OUTPUTREVISION_H
+ #define OUTPUTREVISION_H
+ 
++#include <QtCore/qglobal.h> // -- QtScxml
++
++QT_BEGIN_NAMESPACE // -- QtScxml
++
+ // if the output revision changes, you MUST change it in qobjectdefs.h too
+ enum { mocOutputRevision = 68 };          // moc format output revision
+ 
++QT_END_NAMESPACE // -- QtScxml
++
+ #endif // OUTPUTREVISION_H

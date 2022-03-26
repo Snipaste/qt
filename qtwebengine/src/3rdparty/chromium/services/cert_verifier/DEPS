@@ -1,0 +1,7 @@
+include_rules = [
+  "+crypto/nss_util_internal.h",
+  "+net",
+  "+mojo/public/cpp",
+  "+services/network/public",
+  "+services/network/test"
+]

@@ -1,0 +1,48 @@
+# Generated from other.pro.
+
+if(NOT CMAKE_CROSSCOMPILING)
+    # add_subdirectory(atwrapper) <- does not exist # special case
+endif()
+if(TARGET Qt::Widgets)
+    add_subdirectory(gestures)
+    add_subdirectory(languagechange)
+    add_subdirectory(qfocusevent)
+    add_subdirectory(qsharedpointer_and_qwidget)
+    # add_subdirectory(windowsmobile) <- does not exist # special case
+endif()
+if(TARGET Qt::Network AND TARGET Qt::Widgets)
+    add_subdirectory(qnetworkaccessmanager_and_qprogressdialog)
+endif()
+if(MACOS AND TARGET Qt::Gui AND TARGET Qt::Widgets)
+    add_subdirectory(macgui)
+    add_subdirectory(macplist)
+    add_subdirectory(qaccessibilitymac)
+endif()
+if(TARGET Qt::Network)
+    add_subdirectory(networkselftest)
+endif()
+# QTBUG-87674 # special case
+if(QT_FEATURE_accessibility AND TARGET Qt::Gui AND TARGET Qt::Widgets AND NOT ANDROID)
+    add_subdirectory(qaccessibility)
+endif()
+if(TARGET Qt::Gui)
+    add_subdirectory(qcomplextext)
+endif()
+add_subdirectory(qobjectrace)
+add_subdirectory(toolsupport)
+# QTBUG-87670 # special case
+if(QT_FEATURE_process AND TARGET Qt::Gui AND NOT ANDROID)
+    add_subdirectory(qprocess_and_guieventloop)
+endif()
+if(QT_FEATURE_accessibility_atspi_bridge AND TARGET Qt::Gui AND TARGET Qt::Widgets)
+    #add_subdirectory(qaccessibilitylinux) # special case # This test is broken
+endif()
+if(MACOS AND TARGET Qt::Gui)
+    # add_subdirectory(macnativeevents) # special case it's disabled in qmake too
+endif()
+if(embedded)
+    add_subdirectory(qdirectpainter)
+endif()
+if(QT_FEATURE_xkbcommon AND TARGET Qt::Gui)
+    add_subdirectory(xkbkeyboard)
+endif()

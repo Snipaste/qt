@@ -1,0 +1,14 @@
+# Generated from qtconcurrent.pro.
+
+if(NOT TARGET Qt::Concurrent)
+    return()
+endif()
+if(TARGET Qt::Widgets)
+    qt_internal_add_example(imagescaling)
+    qt_internal_add_example(progressdialog)
+    qt_internal_add_example(runfunction)
+    qt_internal_add_example(wordcount)
+endif()
+if(TARGET Qt::Gui)
+    qt_internal_add_example(map)
+endif()

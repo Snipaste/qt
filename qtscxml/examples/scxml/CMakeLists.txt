@@ -1,0 +1,32 @@
+# Generated from scxml.pro.
+
+if (TARGET Qt::Network AND QT_FEATURE_scxml_ecmascriptdatamodel)
+    qt_internal_add_example(ftpclient)
+endif()
+
+if(TARGET Qt::Widgets)
+    qt_internal_add_example(trafficlight-widgets-static)
+    qt_internal_add_example(trafficlight-widgets-dynamic)
+    if(QT_FEATURE_scxml_ecmascriptdatamodel)
+        # Work around QTBUG-95305
+        if(NOT (CMAKE_GENERATOR STREQUAL "Ninja Multi-Config" AND CMAKE_CROSS_CONFIGS))
+            qt_internal_add_example(mediaplayer-widgets-static)
+            qt_internal_add_example(mediaplayer-widgets-dynamic)
+        endif()
+        qt_internal_add_example(calculator-widgets)
+        qt_internal_add_example(pinball)
+        qt_internal_add_example(sudoku)
+    endif()
+endif()
+
+if(TARGET Qt::Qml AND TARGET Qt::Gui)
+    qt_internal_add_example(calculator-qml)
+    qt_internal_add_example(trafficlight-qml-static)
+    qt_internal_add_example(trafficlight-qml-dynamic)
+    qt_internal_add_example(trafficlight-qml-simple)
+    qt_internal_add_example(mediaplayer-qml-static)
+    qt_internal_add_example(mediaplayer-qml-dynamic)
+    qt_internal_add_example(mediaplayer-qml-cppdatamodel)
+    qt_internal_add_example(invoke-static)
+    qt_internal_add_example(invoke-dynamic)
+endif()

@@ -1,0 +1,19 @@
+# Generated from sql.pro.
+
+if(NOT TARGET Qt::Widgets)
+    return()
+endif()
+qt_internal_add_example(books)
+qt_internal_add_example(drilldown)
+qt_internal_add_example(cachedtable)
+qt_internal_add_example(querymodel)
+qt_internal_add_example(relationaltablemodel)
+qt_internal_add_example(sqlwidgetmapper)
+qt_internal_add_example(tablemodel)
+if(TARGET Qt::Xml)
+    qt_internal_add_example(masterdetail)
+endif()
+
+if(NOT CMAKE_CROSSCOMPILING) # special case
+    qt_internal_add_example(sqlbrowser)
+endif()

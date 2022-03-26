@@ -1,0 +1,40 @@
+Version: 2
+Module only: True
+Configurations:
+-
+    Template: 'qtci-windows-10-x86_64-52'
+    Compiler: 'MSVC2019'
+    Features: ['Packaging', 'Sccache', 'DebugAndRelease', 'DisableTests']
+    Configure arguments: ''
+    Environment variables: []
+    Environment script: ['%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvarsall.bat', 'amd64']
+-
+    Template: 'qtci-windows-10_21H2-x86_64-51'
+    Compiler: 'MSVC2019'
+    Features: ['Packaging', 'Sccache', 'DebugAndRelease', 'DisableTests']
+    Configure arguments: ''
+    Environment variables: []
+    Environment script: ['%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvarsall.bat', 'amd64']
+-
+    Template: 'qtci-windows-10-x86-4'
+    Compiler: 'MSVC2019'
+    Features: ['Packaging', 'Sccache', 'DebugAndRelease', 'DisableTests']
+    Configure arguments: ''
+    Environment variables: []
+    Environment script: ['%ProgramFiles%\Microsoft Visual Studio\2019\Professional\VC\Auxiliary\Build\vcvarsall.bat', 'x86']
+-
+    Template: 'qtci-linux-RHEL-8.4-x86_64-50'
+    Compiler: 'GCC'
+    Features: ['Packaging', 'Sccache', 'DisableTests']
+    Configure arguments: ''
+    Environment variables: []
+-
+    Template: 'qtci-macos-10.14-x86_64'
+    Compiler: 'Clang'
+    Features: ['Packaging', 'DisableTests', 'Sccache', 'DebugAndRelease']
+    Configure arguments: ''
+    Environment variables: []
+-
+    Template: 'qtci-linux-Ubuntu-20.04-x86_64-50'
+    Compiler: 'GCC'
+    Features: ['TestOnly', 'LicenseCheck']

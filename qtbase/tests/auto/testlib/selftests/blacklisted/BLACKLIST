@@ -1,0 +1,16 @@
+obscure # no such platform; is ignored
+
+[pass]
+*
+
+[skip]
+*
+
+[fail]
+*
+
+[xfail]
+*
+
+[xpass]
+*

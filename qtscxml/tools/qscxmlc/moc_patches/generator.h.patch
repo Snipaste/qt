@@ -1,0 +1,58 @@
+--- .upstream/generator.h	2021-01-20 17:08:05.000000000 +0200
++++ generator.h	2021-03-19 15:52:02.000000000 +0200
+@@ -3,7 +3,7 @@
+ ** Copyright (C) 2016 The Qt Company Ltd.
+ ** Contact: https://www.qt.io/licensing/
+ **
+-** This file is part of the tools applications of the Qt Toolkit.
++** This file is part of the QtScxml module of the Qt Toolkit.
+ **
+ ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+ ** Commercial License Usage
+@@ -31,20 +31,33 @@
+ 
+ #include "moc.h"
+ 
++// -- QtScxml
++#include <QtCore/qhash.h>
++#include <QtCore/qlist.h>
++#include <QtCore/qiodevice.h>
++// -- QtScxml
++
+ QT_BEGIN_NAMESPACE
+ 
+ class Generator
+ {
+-    FILE *out;
++    QIODevice &out; // -- QtScxml
+     ClassDef *cdef;
+     QList<uint> meta_data;
+ 
+ public:
+     Generator(ClassDef *classDef, const QList<QByteArray> &metaTypes,
+               const QHash<QByteArray, QByteArray> &knownQObjectClasses,
+-              const QHash<QByteArray, QByteArray> &knownGadgets, FILE *outfile = nullptr,
++              const QHash<QByteArray, QByteArray> &knownGadgets,
++              QIODevice &outfile, // -- QtScxml
+               bool requireCompleteTypes = false);
+     void generateCode();
++
++// -- QtScxml
++    void generateAccessorDefs();
++    void generateSignalDefs();
++// -- QtScxml
++
+ private:
+     bool registerableMetaType(const QByteArray &propertyType);
+     void registerClassInfoStrings();
+@@ -63,7 +76,10 @@
+     void generateMetacall();
+     void generateStaticMetacall();
+     void generateSignal(FunctionDef *def, int index);
++    void generateQPropertyApi();
++#if 0 // -- QtScxml
+     void generatePluginMetaData();
++#endif // -- QtScxml
+     QMultiMap<QByteArray, int> automaticPropertyMetaTypesHelper();
+     QMap<int, QMultiMap<QByteArray, int>>
+     methodsWithAutomaticTypesHelper(const QList<FunctionDef> &methodList);

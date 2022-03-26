@@ -1,0 +1,5 @@
+#ifndef QT_QTMOCKSTATICRESOURCES1_MODULE_H
+#define QT_QTMOCKSTATICRESOURCES1_MODULE_H
+#include <QtMockStaticResources1/QtMockStaticResources1Depends>
+#include "qtmockstaticresources1version.h"
+#endif

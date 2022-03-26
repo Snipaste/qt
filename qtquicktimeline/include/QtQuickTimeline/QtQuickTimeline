@@ -1,0 +1,6 @@
+#ifndef QT_QTQUICKTIMELINE_MODULE_H
+#define QT_QTQUICKTIMELINE_MODULE_H
+#include <QtQuickTimeline/QtQuickTimelineDepends>
+#include "qtquicktimelineglobal.h"
+#include "qtquicktimelineversion.h"
+#endif

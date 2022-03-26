@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    "test_runner"
+  ],
+  "modules": [
+    "sdk_test_runner.js"
+  ]
+}

@@ -1,0 +1,234 @@
+/****************************************************************************
+**
+** Copyright (C) 2019 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: https://www.gnu.org/licenses/fdl-1.3.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \qmlmodule QtQuick3D.Helpers
+    \title Qt Quick 3D Helpers QML Types
+    \brief Module containing helpers for creating applications using Qt Quick 3D.
+
+    This module provides helper types that make it easier to develop applications
+    using \l{Qt Quick 3D}.
+*/
+
+/*!
+    \qmltype AxisHelper
+    \inqmlmodule QtQuick3D.Helpers
+    \inherits Node
+    \brief Visual helper for showing the 3 axes and a grid in a 3D scene.
+
+    \image axishelper.jpg
+
+    The X axis is red, the Y axis is green, and the Z axis is blue.
+
+    The example scene here has a Sphere at position \c{(0, 0, 0)} and an
+    AxisHelper object. With the WasdController helper one can conveniently
+    navigate the scene.
+
+    \badcode
+        View3D {
+            anchors.fill: parent
+            camera: camera
+
+            PerspectiveCamera {
+                id: camera
+                position: Qt.vector3d(0, 0, 600)
+            }
+
+            DirectionalLight {
+                position: Qt.vector3d(-500, 500, -100)
+                color: Qt.rgba(0.4, 0.2, 0.6, 1.0)
+                ambientColor: Qt.rgba(0.1, 0.1, 0.1, 1.0)
+            }
+
+            Model {
+                source: "#Sphere"
+                materials: [ DefaultMaterial { } ]
+            }
+
+            AxisHelper {
+            }
+        }
+
+        WasdController {
+            controlledObject: camera
+        }
+   \endcode
+*/
+
+/*! \qmlproperty color AxisHelper::gridColor
+    Specifies the color of the grid. The default value is \c{Qt.rgba(0.8, 0.8, 0.8, 1)}.
+*/
+/*! \qmlproperty real AxisHelper::gridOpacity
+    Specifies the opacity of the grid. The default value is 0.5.
+*/
+/*! \qmlproperty bool AxisHelper::enableXZGrid
+    Enables the grid on XZ plane. The default value is true.
+*/
+/*! \qmlproperty bool AxisHelper::enableXYGrid
+    Enables the grid on XY plane. The default value is false.
+*/
+/*! \qmlproperty bool AxisHelper::enableYZGrid
+    Enables the grid on YZ plane. The default value is false.
+*/
+/*! \qmlproperty bool AxisHelper::enableAxisLines
+    Enables showing the axis lines. The default value is true.
+*/
+
+/*!
+    \qmltype WasdController
+    \inqmlmodule QtQuick3D.Helpers
+    \inherits Item
+    \brief Control node position and orientation with keys and mouse.
+
+    This helper allows the user to control a node using W, A, S, D, the arrow
+    keys, and the mouse. Usually the controlled node is a Camera, specified in
+    the controlledObject property.
+
+    Adding a WasdController can be highly useful both in applications that wish
+    to provide a standard way of navigating the scene, and also as a temporary
+    measure during development and troubleshooting, as it allows inspecting the
+    scene at run time via familiar keyboard and mouse navigation.
+
+    The key bindings are as follows:
+
+    \list
+    \li \c W or \c up - go forward
+    \li \c S or \c down - go backward
+    \li \c A or \c left - strafe left
+    \li \c D or \c right - strafe right
+    \li \c R or \c {page up} - move up
+    \li \c F or \c {page down} - move down
+    \li \c shift together with other keys - move faster, depending on \l shiftSpeed
+    \endlist
+
+    The following snippet shows how a WasdController object can be added. By
+    default both key and mouse based navigation is active, so in most cases
+    there is no further configuration needed:
+
+    \badcode
+        View3D {
+            anchors.fill: parent
+            camera: camera
+            PerspectiveCamera {
+                id: camera
+                position: Qt.vector3d(0, 0, 600)
+            }
+            ...
+        }
+
+        WasdController {
+            controlledObject: camera
+        }
+    \endcode
+*/
+
+/*! \qmlproperty QtQuick3D::Node WasdController::controlledObject
+    Specifies the node to control. This is typically a Camera object.
+*/
+/*! \qmlproperty real WasdController::speed
+    Specifies the speed of navigation.
+*/
+/*! \qmlproperty real WasdController::shiftSpeed
+    Specifies the speed multiplier that is active when the shift key is pressed.
+*/
+/*! \qmlproperty real WasdController::forwardSpeed
+    Specifies the speed of navigation when the forward key is pressed.
+*/
+/*! \qmlproperty real WasdController::backSpeed
+    Specifies the speed of navigation when the back key is pressed.
+*/
+/*! \qmlproperty real WasdController::rightSpeed
+    Specifies the speed of navigation when the right key is pressed.
+*/
+/*! \qmlproperty real WasdController::leftSpeed
+    Specifies the speed of navigation when the left key is pressed.
+*/
+/*! \qmlproperty real WasdController::upSpeed
+    Specifies the speed of navigation when the up key is pressed.
+*/
+/*! \qmlproperty real WasdController::downSpeed
+    Specifies the speed of navigation when the down key is pressed.
+*/
+/*! \qmlproperty real WasdController::xSpeed
+    Specifies the speed of navigation when the mouse is moved along the X axis.
+*/
+/*! \qmlproperty real WasdController::ySpeed
+    Specifies the speed of navigation when the mouse is moved along the Y axis.
+*/
+/*! \qmlproperty bool WasdController::xInvert
+    Inverts the x-axis controls. The default value is false.
+*/
+/*! \qmlproperty bool WasdController::yInvert
+    Inverts the y-axis controls. The default value is true.
+*/
+/*! \qmlproperty bool WasdController::mouseEnabled
+    Enables mouse controls. The default value is true.
+*/
+/*! \qmlproperty bool WasdController::keysEnabled
+    Enables key controls. The default value is true.
+*/
+/*! \qmlproperty bool WasdController::inputsNeedProcessing
+    This property is true when there are inputs needing processing.
+    \readonly
+*/
+/*! \qmlproperty enumeration WasdController::acceptedButtons
+    Specifies the buttons accepted by the controller.
+    \sa DragHandler, MultiPointHandler
+*/
+
+/*!
+    \qmltype DebugView
+    \inqmlmodule QtQuick3D.Helpers
+    \inherits Rectangle
+    \brief View to show render statistics.
+
+    This helper allows viewing render performance statistics of a View3D.
+    It shows the FPS, sync and render times.
+
+    For example, the following snippet shows how a DebugView can be added that
+    shows its information in the top-left corner of the Qt Quick scene:
+
+    \badcode
+        View3D {
+            id: v3d
+            anchors.fill: parent
+            camera: camera
+            PerspectiveCamera {
+                id: camera
+                position: Qt.vector3d(0, 0, 600)
+            }
+            ...
+        }
+        DebugView {
+            source: v3d
+        }
+    \endcode
+*/
+
+/*! \qmlproperty var DebugView::source
+    Specifies the source View3D to show the statistics from.
+*/

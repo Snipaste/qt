@@ -1,0 +1,6 @@
+SYNCQT.HEADER_FILES = qtaskbuilder.h qtconcurrent_global.h qtconcurrentcompilertest.h qtconcurrentfilter.h qtconcurrentfilterkernel.h qtconcurrentfunctionwrappers.h qtconcurrentiteratekernel.h qtconcurrentmap.h qtconcurrentmapkernel.h qtconcurrentmedian.h qtconcurrentreducekernel.h qtconcurrentrun.h qtconcurrentrunbase.h qtconcurrentstoredfunctioncall.h qtconcurrenttask.h qtconcurrentthreadengine.h 
+SYNCQT.GENERATED_HEADER_FILES = QtConcurrentFilter QtConcurrentMap QtConcurrentRun qtconcurrentversion.h QtConcurrentVersion QtConcurrent 
+SYNCQT.PRIVATE_HEADER_FILES = 
+SYNCQT.QPA_HEADER_FILES = 
+SYNCQT.CLEAN_HEADER_FILES = qtaskbuilder.h qtconcurrent_global.h qtconcurrentcompilertest.h qtconcurrentfilter.h qtconcurrentfilterkernel.h qtconcurrentfunctionwrappers.h qtconcurrentiteratekernel.h qtconcurrentmap.h qtconcurrentmapkernel.h qtconcurrentmedian.h qtconcurrentreducekernel.h qtconcurrentrun.h qtconcurrentrunbase.h qtconcurrentstoredfunctioncall.h qtconcurrenttask.h qtconcurrentthreadengine.h 
+SYNCQT.INJECTIONS = 

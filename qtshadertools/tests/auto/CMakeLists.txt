@@ -1,0 +1,2 @@
+add_subdirectory(qshaderbaker)
+add_subdirectory(buildtimeqsb)
