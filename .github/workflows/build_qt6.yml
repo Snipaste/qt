@@ -1,0 +1,52 @@
+name: Build Qt6
+
+on:
+  workflow_dispatch
+
+jobs:
+  BuildQtWindows:
+    runs-on: windows-2019
+    strategy:
+      matrix:
+        qt_version: [6.2.4]
+        platform: [windows-latest]
+        arch: [32, 64]
+      fail-fast: true
+    steps:
+    - name: Install Python 3.7 version
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+    - name: Setup cmake
+      uses: jwlawson/actions-setup-cmake@v1.12
+    - name: Compile Qt
+      run: |
+        # Clone Qt6 repo
+        cd ..
+        git clone https://github.com/Snipaste/qt.git -b ${{ matrix.qt_version }}
+        cd qt
+        # Apply patches
+        cd qtbase
+        git clone https://github.com/Snipaste/qt-patches.git
+        git apply qt-patches/qtbase-${{ matrix.qt_version }}-windows-tray-icon.patch
+        cd ..
+        # Create shadow build folder
+        cd ..
+        mkdir qt_build_${{ matrix.arch }}
+        cd qt_build_${{ matrix.arch }}
+        # Setup the compiler
+        cmd.exe /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars${{ matrix.arch }}.bat`" && set > %temp%\vcvars.txt"
+        Get-Content "$env:temp\vcvars.txt" | Foreach-Object { if ($_ -match "^(.*?)=(.*)$") { Set-Content "env:\$($matches[1])" $matches[2] } }
+        # Configure Qt
+        ..\qt\configure.bat -prefix "..\qt_binaries_${{ matrix.arch }}" -opengl desktop -platform win32-msvc -release -optimize-size -force-debug-info -opensource -confirm-license -no-pch -no-icu -nomake tools -nomake tests -nomake examples -skip qtconnectivity -skip qt3d -skip qtpositioning -skip qtlocation -skip qtactiveqt -skip qtcharts -skip qtcoap -skip qtconnectivity -skip qtlottie -skip qtnetworkauth -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtvirtualkeyboard -skip qtdatavis3d
+        cmake --build . --parallel
+        cmake --install .
+    - name: Package binaries
+      run: |
+        # Create archive of the pre-built Qt binaries
+        7z a qt_${{ matrix.qt_version }}_binaries_win${{ matrix.arch }}.zip ..\qt_binaries_${{ matrix.arch }}
+    - uses: actions/upload-artifact@v2
+      with:
+        name: qt_${{ matrix.qt_version }}_binaries_win${{ matrix.arch }}.zip
+        path: qt_${{ matrix.qt_version }}_binaries_win${{ matrix.arch }}.zip
