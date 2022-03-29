@@ -39,7 +39,7 @@ jobs:
         cmd.exe /c "call `"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars${{ matrix.arch }}.bat`" && set > %temp%\vcvars.txt"
         Get-Content "$env:temp\vcvars.txt" | Foreach-Object { if ($_ -match "^(.*?)=(.*)$") { Set-Content "env:\$($matches[1])" $matches[2] } }
         # Configure Qt
-        ..\qt\configure.bat -prefix "..\qt_binaries_${{ matrix.arch }}" -opengl desktop -platform win32-msvc -release -optimize-size -force-debug-info -opensource -confirm-license -no-pch -no-icu -nomake tools -nomake tests -nomake examples -skip qtconnectivity -skip qt3d -skip qtpositioning -skip qtlocation -skip qtactiveqt -skip qtcharts -skip qtcoap -skip qtconnectivity -skip qtlottie -skip qtnetworkauth -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtvirtualkeyboard -skip qtdatavis3d
+        ..\qt\configure.bat -prefix "..\qt_binaries_${{ matrix.arch }}" -opengl desktop -platform win32-msvc -release -optimize-size -force-debug-info -opensource -confirm-license -no-pch -no-icu -no-dbus -no-sql-sqlite -no-sql-db2 -no-sql-ibase -no-sql-mysql -no-sql-oci -no-sql-odbc -no-sql-psql -nomake tools -nomake tests -nomake examples -skip qtconnectivity -skip qt3d -skip qtpositioning -skip qtlocation -skip qtactiveqt -skip qtcharts -skip qtcoap -skip qtconnectivity -skip qtlottie -skip qtnetworkauth -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtvirtualkeyboard -skip qtdatavis3d
         cmake --build . --parallel
         cmake --install .
     - name: Package binaries
