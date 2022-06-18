@@ -29,10 +29,7 @@ jobs:
         cd qt
         # Apply patches
         git clone https://github.com/Snipaste/qt-patches.git
-        git apply qt-patches/qt-${{ matrix.qt_version }}-windows-7-compatability.patch
-        git apply qt-patches/qt-${{ matrix.qt_version }}-windows-disable-menu-gutter.patch
-        git apply qt-patches/qt-${{ matrix.qt_version }}-windows-tray-icon.patch
-        git apply qt-patches/qt-${{ matrix.qt_version }}-windows-monitor-name.patch
+        Get-ChildItem -Path ./qt-patches/${{ matrix.qt_version }} | Foreach-Object {git apply $_.FullName}
         # Create shadow build folder
         cd ..
         mkdir qt_build_${{ matrix.arch }}
