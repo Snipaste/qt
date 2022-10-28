@@ -10,7 +10,7 @@ jobs:
       matrix:
         qt_version: [6.2.4]
         arch: [32, 64]
-        strawberry: 5.32.1.1
+        strawberry: [5.32.1.1]
       fail-fast: true
     steps:
     - name: Setup Strawberry ${{ matrix.strawberry }} ${{ matrix.arch }}
