@@ -5,7 +5,7 @@ on:
 
 jobs:
   BuildQtWindows:
-    runs-on: windows-latest
+    runs-on: windows-2019
     strategy:
       matrix:
         qt_version: [6.2.4]
@@ -17,7 +17,6 @@ jobs:
       run: |
         rm -r C:/Strawberry/*
         Invoke-WebRequest https://strawberryperl.com/download/${{ matrix.strawberry }}/strawberry-perl-${{ matrix.strawberry }}-${{ matrix.arch }}bit-portable.zip -OutFile strawberry.zip
-        echo "== unpack strawberry-perl"
         7z.exe x strawberry.zip -o"C:/Strawberry"
         rm strawberry.zip
         perl --version
@@ -37,7 +36,7 @@ jobs:
         cd qt
         # Apply patches
         git clone https://github.com/Snipaste/qt-patches.git
-        Get-ChildItem -Path ./qt-patches/${{ matrix.qt_version }} | Foreach-Object {git apply --ignore-whitespace $_.FullName}
+        Get-ChildItem -Path ./qt-patches/${{ matrix.qt_version }} | Foreach-Object { echo "Applying $_. ..."; git apply --ignore-whitespace $_.FullName }
         # Create shadow build folder
         cd ..
         mkdir qt_build_${{ matrix.arch }}
